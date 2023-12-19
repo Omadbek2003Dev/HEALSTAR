@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkListStore" id="ListOfRegions">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Andijan Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Bukhara Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Fergana Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Jizzakh Region
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Karakalpakstan Republic 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Kashkadarya Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Khorezm Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Namangan Region
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Navoiy Region
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Samarkand Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Sirdaryo Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Surkhandarya Region</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Tashkent Region 
+</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Tashkent City</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="listStoreGlobalLocal">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Global</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Local</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="searchType">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Hospital</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Doctor</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkWindow" id="searchingPage">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkPaned" id="searchingWindow">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <child>
+          <object class="GtkBox" id="mainButtons">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed" id="HomeButtonField">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="label" translatable="yes">Home</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="hospitalsButto">
+                    <property name="label" translatable="yes">Hospitals</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="myProfileButton">
+                    <property name="label" translatable="yes">My Profile</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">False</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="searchingField">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed" id="searchingCAtegoriesField">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel" id="searchingLabel2">
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Searching </property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans Bold 35"/>
+                        </attributes>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="typeOfSearch2">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">searchType</property>
+                      </object>
+                      <packing>
+                        <property name="x">550</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">listStoreGlobalLocal</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">300</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="SelectRegionsButton2">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">ListOfRegions</property>
+                        <property name="active">14</property>
+                        <property name="button-sensitivity">on</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">800</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="devisionContainer">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">True</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="searchingPageResultsDOCTOR">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkPaned" id="searchingWindow1">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <child>
+          <object class="GtkBox" id="mainButtons1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="label" translatable="yes">Home</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="hospitalsButto1">
+                    <property name="label" translatable="yes">Hospitals</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="myProfileButton1">
+                    <property name="label" translatable="yes">My Profile</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">False</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="searchingField1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed" id="searchingCAtegoriesField1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="width-request">32</property>
+                    <property name="height-request">32</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel" id="searchingLabel1">
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Searching </property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans Bold 35"/>
+                        </attributes>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="typeOfSearch1">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">searchType</property>
+                      </object>
+                      <packing>
+                        <property name="x">550</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">listStoreGlobalLocal</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">300</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="SelectRegionsButton1">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">ListOfRegions</property>
+                        <property name="active">14</property>
+                        <property name="button-sensitivity">on</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">800</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="devisionContainer1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkImage" id="internalMedecinePhoto">
+                        <property name="width-request">200</property>
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="cardiologyPhoto">
+                        <property name="width-request">200</property>
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton1">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="OrthopedicPhoto">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton2">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="DoctorButton3">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="NeurologyButton1">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="internalMedecinePhoto2">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="internalMedecinePhoto3">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="internalMedecinePhoto4">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton4">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton5">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorButton6">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="DoctorNutton7">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="internalMedecinePhoto1">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/BigDoctor.jpg</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">True</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="searchingPageResultsHOSPITALS">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkPaned" id="searchingWindow2">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <child>
+          <object class="GtkBox" id="mainButtons2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="label" translatable="yes">Home</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="hospitalsButto2">
+                    <property name="label" translatable="yes">Hospitals</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="myProfileButton2">
+                    <property name="label" translatable="yes">My Profile</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">False</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="searchingField2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed" id="searchingCAtegoriesField2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="width-request">32</property>
+                    <property name="height-request">32</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel" id="searchingLabel3">
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Searching </property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans Bold 35"/>
+                        </attributes>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="typeOfSearch3">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">searchType</property>
+                      </object>
+                      <packing>
+                        <property name="x">550</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">listStoreGlobalLocal</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">300</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="SelectRegionsButton3">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">ListOfRegions</property>
+                        <property name="active">14</property>
+                        <property name="button-sensitivity">on</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">800</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="devisionContainer2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="width-request">32</property>
+                    <property name="height-request">32</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital1">
+                        <property name="width-request">200</property>
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton1">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital2">
+                        <property name="width-request">200</property>
+                        <property name="height-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton2">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital3">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton3">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital4">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton4">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">218</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital5">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital6">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital7">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton5">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton6">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">260</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton7">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">480</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="HospitalButton8">
+                        <property name="label" translatable="yes">DoctorName</property>
+                        <property name="width-request">200</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">478</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="SearchingHospital8">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="pixbuf">static/HOSPITALsearch</property>
+                      </object>
+                      <packing>
+                        <property name="x">40</property>
+                        <property name="y">278</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">True</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

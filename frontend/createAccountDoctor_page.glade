@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkEntryBuffer" id="entryAddressDoctor"/>
+  <object class="GtkEntryBuffer" id="entryExperienceDoctor"/>
+  <object class="GtkEntryBuffer" id="entryHospitalsDoctor"/>
+  <object class="GtkEntryBuffer" id="entryNameDoctor"/>
+  <object class="GtkEntryBuffer" id="entryPhoneNumberDoctor"/>
+  <object class="GtkEntryBuffer" id="entryQualificationDoctor"/>
+  <object class="GtkEntryBuffer" id="entrySpecializationDoctor"/>
+  <object class="GtkEntryBuffer" id="entrySurnameDoctor"/>
+  <object class="GtkEntryBuffer" id="entryWorkingHoursDoctor"/>
+  <object class="GtkWindow" id="createAccountPageDoctorWindow">
+    <property name="width-request">476</property>
+    <property name="height-request">668</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Create Account Doctor page</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkFixed" id="createAccountPageDoctorFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="createAccountPageDoctorLogoImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/LogoIcon.png</property>
+          </object>
+          <packing>
+            <property name="x">72</property>
+            <property name="y">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="createAccountPageDoctorRegistrationLabel">
+            <property name="width-request">150</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Registration:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Italic 18"/>
+              <attribute name="style" value="oblique"/>
+              <attribute name="weight" value="normal"/>
+              <attribute name="scale" value="1"/>
+              <attribute name="foreground" value="#ffffffffffff"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">150</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorSurnameEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entrySurnameDoctor</property>
+            <property name="placeholder-text" translatable="yes">Surname</property>
+            <property name="input-purpose">name</property>
+          </object>
+          <packing>
+            <property name="x">150</property>
+            <property name="y">250</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorIDEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="editable">False</property>
+            <property name="placeholder-text" translatable="yes">ID</property>
+            <property name="input-purpose">digits</property>
+          </object>
+          <packing>
+            <property name="x">150</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorSpecializationEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entrySpecializationDoctor</property>
+            <property name="placeholder-text" translatable="yes">Specialization</property>
+          </object>
+          <packing>
+            <property name="x">75</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorAddressEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryAddressDoctor</property>
+            <property name="placeholder-text" translatable="yes">Address</property>
+          </object>
+          <packing>
+            <property name="x">75</property>
+            <property name="y">450</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submitButtonCreateAccountPageDoctor">
+            <property name="label" translatable="yes">Submit</property>
+            <property name="width-request">170</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_submitButtonCreateAccountPageDoctor_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">150</property>
+            <property name="y">550</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorPhoneNumberEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryPhoneNumberDoctor</property>
+            <property name="placeholder-text" translatable="yes">Phone Number</property>
+            <property name="input-purpose">phone</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">450</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="createAccountPageDoctorImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/SmallLoginPage.jpg</property>
+          </object>
+          <packing>
+            <property name="x">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorNameEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryNameDoctor</property>
+            <property name="placeholder-text" translatable="yes">Name</property>
+            <property name="input-purpose">name</property>
+          </object>
+          <packing>
+            <property name="x">150</property>
+            <property name="y">200</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorQualificationEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryQualificationDoctor</property>
+            <property name="placeholder-text" translatable="yes">Qualification</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorExperienceEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryExperienceDoctor</property>
+            <property name="placeholder-text" translatable="yes">Experience</property>
+          </object>
+          <packing>
+            <property name="x">75</property>
+            <property name="y">400</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorHospitalsEntry">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryHospitalsDoctor</property>
+            <property name="placeholder-text" translatable="yes">Hospital / Hospital</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">400</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="createAccountPageDoctorWorkingHoursEntry">
+            <property name="width-request">216</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="buffer">entryWorkingHoursDoctor</property>
+            <property name="placeholder-text" translatable="yes">start(hh : mm) - finish(hh :mm)</property>
+          </object>
+          <packing>
+            <property name="x">225</property>
+            <property name="y">500</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="createAccountPageDoctorWorkingHoursLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Working hours:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Italic 18"/>
+              <attribute name="style" value="oblique"/>
+              <attribute name="weight" value="normal"/>
+              <attribute name="scale" value="1"/>
+              <attribute name="foreground" value="#ffffffffffff"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">40</property>
+            <property name="y">503</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="backButtonCreateAccountPageDoctor">
+            <property name="label">gtk-go-back</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_backButtonCreateAccountPageDoctor_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">-4</property>
+            <property name="y">25</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="welcomePageWindow">
+    <property name="width-request">500</property>
+    <property name="height-request">600</property>
+    <property name="can-focus">False</property>
+    <property name="has-focus">True</property>
+    <property name="title" translatable="yes">Welcome page</property>
+    <property name="window-position">center</property>
+    <property name="default-width">400</property>
+    <property name="default-height">200</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkFixed" id="welcomePageFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="doctorButton">
+            <property name="label" translatable="yes">Doctor</property>
+            <property name="width-request">50</property>
+            <property name="height-request">10</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_doctorWelcomePageButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">146</property>
+            <property name="y">540</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="logoImageWelcome">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/LogoIcon.png</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">15</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelWelcome">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Welcome !</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 40"/>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="normal"/>
+              <attribute name="variant" value="normal"/>
+              <attribute name="stretch" value="normal"/>
+              <attribute name="scale" value="1"/>
+              <attribute name="foreground" value="#000000000000"/>
+              <attribute name="background" value="#aaaaaaaaaaaa"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">90</property>
+            <property name="y">240</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="welcomeImage">
+            <property name="width-request">50</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="pixbuf">static/SmallWelcome.jpg</property>
+          </object>
+          <packing>
+            <property name="x">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelWelcomeText">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">     Control your health:
+      -in the nearest location,
+      -by your timeline,
+      -for affordable price,
+      -by professionals</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Italic 20"/>
+              <attribute name="style" value="italic"/>
+              <attribute name="weight" value="normal"/>
+              <attribute name="stretch" value="extra-condensed"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">50</property>
+            <property name="y">320</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="patientButton">
+            <property name="label" translatable="yes">Patient</property>
+            <property name="width-request">50</property>
+            <property name="height-request">10</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_patientWelcomePageButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">540</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

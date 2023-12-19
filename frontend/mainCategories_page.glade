@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="mainPage">
+    <property name="width-request">1200</property>
+    <property name="height-request">650</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Main page</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkPaned" id="mainPagePaned">
+        <property name="width-request">1200</property>
+        <property name="height-request">650</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="position">930</property>
+        <property name="position-set">True</property>
+        <property name="wide-handle">True</property>
+        <child>
+          <object class="GtkBox" id="categoriesBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkFixed" id="categoriesHeader">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-bottom">2</property>
+                <child>
+                  <object class="GtkImage" id="mainPageLogo">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/LogoIcon.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">100</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSearchEntry" id="mainPageSearchBar">
+                    <property name="width-request">420</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="primary-icon-name">edit-find-symbolic</property>
+                    <property name="primary-icon-activatable">False</property>
+                    <property name="primary-icon-sensitive">False</property>
+                    <property name="placeholder-text" translatable="yes">search</property>
+                  </object>
+                  <packing>
+                    <property name="x">460</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="logoutButtonMainPage">
+                    <property name="label">gtk-quit</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="use-stock">True</property>
+                    <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="on_logoutButtonMainPage_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">-4</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="mainPageButtonsBar">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="homeButtonMainPage">
+                    <property name="label" translatable="yes">Home</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_homeButtonMainPage_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">40</property>
+                    <property name="y">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="messagesButtonMainPage">
+                    <property name="label" translatable="yes">Messages</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_messagesButtonMainPage_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">130</property>
+                    <property name="y">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="hospitalsButtonMainPage">
+                    <property name="label" translatable="yes">Hospitals</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_hospitalsButtonMainPage_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">245</property>
+                    <property name="y">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="categoriesSectionFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkImage" id="internalMedecinePhotoCategories">
+                    <property name="width-request">200</property>
+                    <property name="height-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/internalMedicineCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">40</property>
+                    <property name="y">18</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="internalMedicineButtonCategories">
+                    <property name="label" translatable="yes">Internal Medicine</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_internalMedicineButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">40</property>
+                    <property name="y">218</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="cardiologyPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/cardiologyCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">260</property>
+                    <property name="y">18</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="cardiologyButtonCategories">
+                    <property name="label" translatable="yes">Cardiology</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_cardiologyButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">260</property>
+                    <property name="y">218</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="orthopedicPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/orthopedicCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">480</property>
+                    <property name="y">18</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="orthopedicButtonCategories">
+                    <property name="label" translatable="yes">Orthopedic</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_orthopedicButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">480</property>
+                    <property name="y">218</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="neurologyPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/neurologyCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">700</property>
+                    <property name="y">18</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="neurologyButtonCategories">
+                    <property name="label" translatable="yes">Neurology</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_neurologyButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">700</property>
+                    <property name="y">218</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="pediatricsPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/pediatricsCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">260</property>
+                    <property name="y">278</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="obstetricsAndGynecologyPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/obstetrics-and-gynecologyCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">480</property>
+                    <property name="y">278</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="psychiatryPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/psychiatryCategories.jpg</property>
+                  </object>
+                  <packing>
+                    <property name="x">700</property>
+                    <property name="y">278</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="oncologyButtonCategories">
+                    <property name="label" translatable="yes">Oncology</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_oncologyButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">40</property>
+                    <property name="y">478</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="pediatricsButtonCategories">
+                    <property name="label" translatable="yes">Pediatrics</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_pediatricsButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">260</property>
+                    <property name="y">478</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="obstetricsAndGynecologyButtonCategories">
+                    <property name="label" translatable="yes">Obstetrics and 
+Gynecology</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_obstetricsAndGynecologyButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">480</property>
+                    <property name="y">478</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="psychiatryButtonCategories">
+                    <property name="label" translatable="yes">Psychiatry</property>
+                    <property name="width-request">200</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_psychiatryButtonCategories_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">700</property>
+                    <property name="y">478</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="oncologyPhotoCategories">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/oncologyCategories.png</property>
+                  </object>
+                  <packing>
+                    <property name="x">40</property>
+                    <property name="y">278</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">False</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="clientProfileBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkFixed" id="profilePhotoFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkImage" id="clientProfilePhotoMain">
+                    <property name="width-request">10</property>
+                    <property name="height-request">10</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">static/userIcon.jpg</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="clientNameBarFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="ProfileName1">
+                    <property name="width-request">300</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Name 
+Surname</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Sans Bold 18"/>
+                      <attribute name="weight" value="medium"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="clientInfoFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="emailLabel">
+                    <property name="width-request">250</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Email: </property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">20</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">True</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

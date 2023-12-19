@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="confirmationPageWindow">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Confirmation Page</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkFixed" id="confirmationPageFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="logoImageConfirmationPage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/LogoIcon.png</property>
+          </object>
+          <packing>
+            <property name="x">80</property>
+            <property name="y">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelConfirmationPage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Your information 
+successfully added</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Italic 20"/>
+              <attribute name="foreground" value="#3333d1d17a7a"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">283</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="loginButtonConfirmationPage">
+            <property name="label" translatable="yes">Login</property>
+            <property name="width-request">30</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_loginButtonConfirmationPage_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">160</property>
+            <property name="y">380</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="confirmationPageImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/SmallConfirmationImage.png</property>
+          </object>
+          <packing>
+            <property name="x">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="backButtonConfirmationPage">
+            <property name="label">gtk-go-back</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_backButtonConfirmationPage_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">-4</property>
+            <property name="y">26</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

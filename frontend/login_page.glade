@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="loginPageWindow">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Log In page</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkFixed" id="loginPageFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="logoImageSignIn">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/LogoIcon.png</property>
+          </object>
+          <packing>
+            <property name="x">80</property>
+            <property name="y">15</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="usernameInput">
+            <property name="width-request">30</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Username</property>
+          </object>
+          <packing>
+            <property name="x">130</property>
+            <property name="y">256</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="passwordInput">
+            <property name="width-request">30</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="visibility">False</property>
+            <property name="invisible-char">$</property>
+            <property name="placeholder-text" translatable="yes">Password</property>
+            <property name="input-purpose">password</property>
+          </object>
+          <packing>
+            <property name="x">130</property>
+            <property name="y">317</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submitButton">
+            <property name="label" translatable="yes">    Submit      </property>
+            <property name="width-request">30</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_submitLoginButton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">155</property>
+            <property name="y">380</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelLogin">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Log In</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans 20"/>
+              <attribute name="foreground" value="#ffffffffffff"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">155</property>
+            <property name="y">172</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="loginImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/SmallLoginPage.jpg</property>
+          </object>
+          <packing>
+            <property name="x">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="loginErrorLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 18"/>
+              <attribute name="foreground" value="#c0c01c1c2828"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">50</property>
+            <property name="y">445</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="backButtonLoginPage">
+            <property name="label">gtk-go-back</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_backButtonLoginPage_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">-4</property>
+            <property name="y">34</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

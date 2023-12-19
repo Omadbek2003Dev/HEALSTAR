@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="registrationWindow">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Registration page</property>
+    <property name="icon">static/iconImage.png</property>
+    <child>
+      <object class="GtkFixed" id="registrationFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel" id="registrationLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Your User ID is :</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 18"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">70</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="registrationLogo">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/LogoIcon.png</property>
+          </object>
+          <packing>
+            <property name="x">80</property>
+            <property name="y">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="registrationIDLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">U12345</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 18"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">316</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="registrationImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/SmallLoginPage.jpg</property>
+          </object>
+          <packing>
+            <property name="x">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="registrationEmailEntry">
+            <property name="width-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Email</property>
+            <property name="input-purpose">email</property>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">250</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="registrationPasswordEntry">
+            <property name="width-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="visibility">False</property>
+            <property name="invisible-char">•</property>
+            <property name="placeholder-text" translatable="yes">PASSWORD</property>
+            <property name="input-purpose">password</property>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="registrationConfirmPasswordEntry">
+            <property name="width-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="visibility">False</property>
+            <property name="invisible-char">•</property>
+            <property name="placeholder-text" translatable="yes">CONFIRM PASSWORD</property>
+            <property name="input-purpose">password</property>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">400</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submitButtonRegistration">
+            <property name="label" translatable="yes">Submit</property>
+            <property name="width-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_submitButtonRegistration_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">450</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="backButtonRegistration">
+            <property name="label">gtk-go-back</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_backButtonRegistration_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">-4</property>
+            <property name="y">27</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

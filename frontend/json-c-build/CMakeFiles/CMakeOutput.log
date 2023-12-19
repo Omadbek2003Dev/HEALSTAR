@@ -1,0 +1,1272 @@
+The system is: Linux - 6.2.0-37-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0543b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0543b.dir/build.make CMakeFiles/cmTC_0543b.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0543b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccUQGMoE.s
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 50eaa2331df977b8016186198deb2d18
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/'
+ as -v --64 -o CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o /tmp/ccUQGMoE.s
+GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_0543b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0543b.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -o cmTC_0543b 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0543b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0543b.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGqfDQx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0543b /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0543b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0543b.'
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/11/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0543b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0543b.dir/build.make CMakeFiles/cmTC_0543b.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0543b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccUQGMoE.s]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 50eaa2331df977b8016186198deb2d18]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o /tmp/ccUQGMoE.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_0543b]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0543b.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -o cmTC_0543b ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0543b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0543b.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGqfDQx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0543b /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccGqfDQx.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_0543b] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
+    arg [CMakeFiles/cmTC_0543b.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ae1fe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ae1fe.dir/build.make CMakeFiles/cmTC_ae1fe.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae1fe.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_ae1fe.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ae1fe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae1fe.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_ae1fe.dir/CheckIncludeFile.c.o -o cmTC_ae1fe  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_274f7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_274f7.dir/build.make CMakeFiles/cmTC_274f7.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_274f7.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_274f7.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_274f7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_274f7.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_274f7.dir/CheckIncludeFile.c.o -o cmTC_274f7  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9435b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9435b.dir/build.make CMakeFiles/cmTC_9435b.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9435b.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_9435b.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_9435b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9435b.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_9435b.dir/CheckIncludeFile.c.o -o cmTC_9435b  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c8699/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c8699.dir/build.make CMakeFiles/cmTC_c8699.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8699.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_c8699.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c8699
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8699.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c8699.dir/CheckIncludeFile.c.o -o cmTC_c8699  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0f32b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0f32b.dir/build.make CMakeFiles/cmTC_0f32b.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f32b.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_0f32b.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0f32b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f32b.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0f32b.dir/CheckIncludeFile.c.o -o cmTC_0f32b  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file syslog.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_13d0e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_13d0e.dir/build.make CMakeFiles/cmTC_13d0e.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13d0e.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_13d0e.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_13d0e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13d0e.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_13d0e.dir/CheckIncludeFile.c.o -o cmTC_13d0e  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files stdlib.h;stdarg.h;string.h;float.h exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2d04f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2d04f.dir/build.make CMakeFiles/cmTC_2d04f.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d04f.dir/STDC_HEADERS.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_2d04f.dir/STDC_HEADERS.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckIncludeFiles/STDC_HEADERS.c
+Linking C executable cmTC_2d04f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d04f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_2d04f.dir/STDC_HEADERS.c.o -o cmTC_2d04f  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dc7ca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dc7ca.dir/build.make CMakeFiles/cmTC_dc7ca.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc7ca.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_dc7ca.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dc7ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc7ca.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_dc7ca.dir/CheckIncludeFile.c.o -o cmTC_dc7ca  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_23783/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_23783.dir/build.make CMakeFiles/cmTC_23783.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23783.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_23783.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_23783
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23783.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_23783.dir/CheckIncludeFile.c.o -o cmTC_23783  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/resource.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e31d5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e31d5.dir/build.make CMakeFiles/cmTC_e31d5.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e31d5.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_e31d5.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e31d5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e31d5.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e31d5.dir/CheckIncludeFile.c.o -o cmTC_e31d5  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file dlfcn.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_039fa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_039fa.dir/build.make CMakeFiles/cmTC_039fa.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_039fa.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_039fa.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_039fa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_039fa.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_039fa.dir/CheckIncludeFile.c.o -o cmTC_039fa  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file endian.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_70243/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_70243.dir/build.make CMakeFiles/cmTC_70243.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70243.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_70243.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_70243
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70243.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_70243.dir/CheckIncludeFile.c.o -o cmTC_70243  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d2fb0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d2fb0.dir/build.make CMakeFiles/cmTC_d2fb0.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d2fb0.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_d2fb0.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d2fb0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2fb0.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_d2fb0.dir/CheckIncludeFile.c.o -o cmTC_d2fb0  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file locale.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_14afe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_14afe.dir/build.make CMakeFiles/cmTC_14afe.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14afe.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_14afe.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_14afe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14afe.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_14afe.dir/CheckIncludeFile.c.o -o cmTC_14afe  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0533f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0533f.dir/build.make CMakeFiles/cmTC_0533f.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0533f.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_0533f.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0533f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0533f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0533f.dir/CheckIncludeFile.c.o -o cmTC_0533f  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8dd72/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8dd72.dir/build.make CMakeFiles/cmTC_8dd72.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8dd72.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_8dd72.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_8dd72
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8dd72.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_8dd72.dir/CheckIncludeFile.c.o -o cmTC_8dd72  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_35ca9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_35ca9.dir/build.make CMakeFiles/cmTC_35ca9.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35ca9.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_35ca9.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_35ca9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35ca9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_35ca9.dir/CheckIncludeFile.c.o -o cmTC_35ca9  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/cdefs.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6dfdf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6dfdf.dir/build.make CMakeFiles/cmTC_6dfdf.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6dfdf.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_6dfdf.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6dfdf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6dfdf.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6dfdf.dir/CheckIncludeFile.c.o -o cmTC_6dfdf  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/param.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_089b2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_089b2.dir/build.make CMakeFiles/cmTC_089b2.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_089b2.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_089b2.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_089b2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_089b2.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_089b2.dir/CheckIncludeFile.c.o -o cmTC_089b2  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/random.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_21039/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_21039.dir/build.make CMakeFiles/cmTC_21039.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21039.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_21039.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_21039
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21039.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_21039.dir/CheckIncludeFile.c.o -o cmTC_21039  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f1c62/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f1c62.dir/build.make CMakeFiles/cmTC_f1c62.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1c62.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_f1c62.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f1c62
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1c62.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_f1c62.dir/CheckIncludeFile.c.o -o cmTC_f1c62  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the INFINITY exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f9eda/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f9eda.dir/build.make CMakeFiles/cmTC_f9eda.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f9eda.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_f9eda.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f9eda
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9eda.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_f9eda.dir/CheckSymbolExists.c.o -o cmTC_f9eda  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef INFINITY
+  return ((int*)(&INFINITY))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the isinf exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_84500/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_84500.dir/build.make CMakeFiles/cmTC_84500.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84500.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_84500.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_84500
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84500.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_84500.dir/CheckSymbolExists.c.o -o cmTC_84500  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef isinf
+  return ((int*)(&isinf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the isnan exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_93a15/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_93a15.dir/build.make CMakeFiles/cmTC_93a15.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93a15.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_93a15.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_93a15
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93a15.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_93a15.dir/CheckSymbolExists.c.o -o cmTC_93a15  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef isnan
+  return ((int*)(&isnan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the nan exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fbb32/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fbb32.dir/build.make CMakeFiles/cmTC_fbb32.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbb32.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_fbb32.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fbb32
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbb32.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_fbb32.dir/CheckSymbolExists.c.o -o cmTC_fbb32  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef nan
+  return ((int*)(&nan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the snprintf exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7285a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7285a.dir/build.make CMakeFiles/cmTC_7285a.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7285a.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_7285a.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7285a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7285a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_7285a.dir/CheckSymbolExists.c.o -o cmTC_7285a  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef snprintf
+  return ((int*)(&snprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vasprintf exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bd254/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bd254.dir/build.make CMakeFiles/cmTC_bd254.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bd254.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_bd254.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bd254
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd254.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_bd254.dir/CheckSymbolExists.c.o -o cmTC_bd254  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vasprintf
+  return ((int*)(&vasprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsnprintf exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_46423/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_46423.dir/build.make CMakeFiles/cmTC_46423.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46423.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_46423.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_46423
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46423.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_46423.dir/CheckSymbolExists.c.o -o cmTC_46423  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsnprintf
+  return ((int*)(&vsnprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vprintf exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f1bba/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f1bba.dir/build.make CMakeFiles/cmTC_f1bba.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1bba.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_f1bba.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f1bba
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1bba.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_f1bba.dir/CheckSymbolExists.c.o -o cmTC_f1bba  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vprintf
+  return ((int*)(&vprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the open exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c1220/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c1220.dir/build.make CMakeFiles/cmTC_c1220.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c1220.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_c1220.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c1220
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1220.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c1220.dir/CheckSymbolExists.c.o -o cmTC_c1220  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef open
+  return ((int*)(&open))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the realloc exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e3012/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e3012.dir/build.make CMakeFiles/cmTC_e3012.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e3012.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_e3012.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e3012
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3012.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e3012.dir/CheckSymbolExists.c.o -o cmTC_e3012  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef realloc
+  return ((int*)(&realloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the setlocale exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a1395/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a1395.dir/build.make CMakeFiles/cmTC_a1395.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1395.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_a1395.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a1395
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1395.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a1395.dir/CheckSymbolExists.c.o -o cmTC_a1395  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <locale.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setlocale
+  return ((int*)(&setlocale))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the uselocale exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a821d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a821d.dir/build.make CMakeFiles/cmTC_a821d.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a821d.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_a821d.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a821d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a821d.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a821d.dir/CheckSymbolExists.c.o -o cmTC_a821d  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <locale.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef uselocale
+  return ((int*)(&uselocale))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcasecmp exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d3c01/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d3c01.dir/build.make CMakeFiles/cmTC_d3c01.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d3c01.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_d3c01.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_d3c01
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3c01.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_d3c01.dir/CheckSymbolExists.c.o -o cmTC_d3c01  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <strings.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcasecmp
+  return ((int*)(&strcasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strncasecmp exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c119/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0c119.dir/build.make CMakeFiles/cmTC_0c119.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c119.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_0c119.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0c119
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c119.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0c119.dir/CheckSymbolExists.c.o -o cmTC_0c119  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <strings.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncasecmp
+  return ((int*)(&strncasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strdup exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c117f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c117f.dir/build.make CMakeFiles/cmTC_c117f.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c117f.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_c117f.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c117f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c117f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c117f.dir/CheckSymbolExists.c.o -o cmTC_c117f  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strdup
+  return ((int*)(&strdup))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strerror exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5287c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5287c.dir/build.make CMakeFiles/cmTC_5287c.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5287c.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_5287c.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5287c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5287c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_5287c.dir/CheckSymbolExists.c.o -o cmTC_5287c  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strerror
+  return ((int*)(&strerror))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsyslog exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_90114/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_90114.dir/build.make CMakeFiles/cmTC_90114.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90114.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_90114.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_90114
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90114.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_90114.dir/CheckSymbolExists.c.o -o cmTC_90114  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <syslog.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsyslog
+  return ((int*)(&vsyslog))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getrandom exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e1f54/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e1f54.dir/build.make CMakeFiles/cmTC_e1f54.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1f54.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_e1f54.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e1f54
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1f54.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e1f54.dir/CheckSymbolExists.c.o -o cmTC_e1f54  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/random.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getrandom
+  return ((int*)(&getrandom))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getrusage exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_14d47/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_14d47.dir/build.make CMakeFiles/cmTC_14d47.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14d47.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_14d47.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_14d47
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14d47.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_14d47.dir/CheckSymbolExists.c.o -o cmTC_14d47  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/resource.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getrusage
+  return ((int*)(&getrusage))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoll exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0f370/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0f370.dir/build.make CMakeFiles/cmTC_0f370.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f370.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_0f370.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0f370
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f370.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0f370.dir/CheckSymbolExists.c.o -o cmTC_0f370  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoll
+  return ((int*)(&strtoll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoull exist passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dac38/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dac38.dir/build.make CMakeFiles/cmTC_dac38.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dac38.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_dac38.dir/CheckSymbolExists.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_dac38
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac38.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_dac38.dir/CheckSymbolExists.c.o -o cmTC_dac38  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoull
+  return ((int*)(&strtoull))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_935a5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_935a5.dir/build.make CMakeFiles/cmTC_935a5.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_935a5.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_935a5.dir/CheckIncludeFile.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_935a5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_935a5.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_935a5.dir/CheckIncludeFile.c.o -o cmTC_935a5  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of int passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_756b6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_756b6.dir/build.make CMakeFiles/cmTC_756b6.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_756b6.dir/SIZEOF_INT.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_756b6.dir/SIZEOF_INT.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_INT.c
+Linking C executable cmTC_756b6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_756b6.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_756b6.dir/SIZEOF_INT.c.o -o cmTC_756b6  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of int64_t passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4b64e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4b64e.dir/build.make CMakeFiles/cmTC_4b64e.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b64e.dir/SIZEOF_INT64_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_4b64e.dir/SIZEOF_INT64_T.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_INT64_T.c
+Linking C executable cmTC_4b64e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b64e.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4b64e.dir/SIZEOF_INT64_T.c.o -o cmTC_4b64e  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of long passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_31860/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_31860.dir/build.make CMakeFiles/cmTC_31860.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_31860.dir/SIZEOF_LONG.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_31860.dir/SIZEOF_LONG.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
+Linking C executable cmTC_31860
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31860.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_31860.dir/SIZEOF_LONG.c.o -o cmTC_31860  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of long long passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e6880/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e6880.dir/build.make CMakeFiles/cmTC_e6880.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6880.dir/SIZEOF_LONG_LONG.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_e6880.dir/SIZEOF_LONG_LONG.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_LONG_LONG.c
+Linking C executable cmTC_e6880
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6880.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e6880.dir/SIZEOF_LONG_LONG.c.o -o cmTC_e6880  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cbd65/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cbd65.dir/build.make CMakeFiles/cmTC_cbd65.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cbd65.dir/SIZEOF_SIZE_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_cbd65.dir/SIZEOF_SIZE_T.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
+Linking C executable cmTC_cbd65
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbd65.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_cbd65.dir/SIZEOF_SIZE_T.c.o -o cmTC_cbd65  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of ssize_t passed with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b13f4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b13f4.dir/build.make CMakeFiles/cmTC_b13f4.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b13f4.dir/SIZEOF_SSIZE_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_b13f4.dir/SIZEOF_SSIZE_T.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_SSIZE_T.c
+Linking C executable cmTC_b13f4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b13f4.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_b13f4.dir/SIZEOF_SSIZE_T.c.o -o cmTC_b13f4  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_ATOMIC_BUILTINS succeeded with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_77b53/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_77b53.dir/build.make CMakeFiles/cmTC_77b53.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77b53.dir/src.c.o
+/usr/bin/cc -DHAVE_ATOMIC_BUILTINS -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_77b53.dir/src.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_77b53
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77b53.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_77b53.dir/src.c.o -o cmTC_77b53  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { int i, x = 0; i = __sync_add_and_fetch(&x,1); return x; }
+Performing C SOURCE FILE Test HAVE___THREAD succeeded with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_abd70/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_abd70.dir/build.make CMakeFiles/cmTC_abd70.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_abd70.dir/src.c.o
+/usr/bin/cc -DHAVE___THREAD -D_GNU_SOURCE  -fPIE -o CMakeFiles/cmTC_abd70.dir/src.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_abd70
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abd70.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_abd70.dir/src.c.o -o cmTC_abd70  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+__thread int x = 0; int main() { return 0; }
+Performing C SOURCE FILE Test REENTRANT_WORKS succeeded with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3fa54/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3fa54.dir/build.make CMakeFiles/cmTC_3fa54.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3fa54.dir/src.c.o
+/usr/bin/cc -DREENTRANT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -fPIE -o CMakeFiles/cmTC_3fa54.dir/src.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3fa54
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fa54.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_3fa54.dir/src.c.o -o cmTC_3fa54  -lm 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	/* uClibc toolchains without threading barf when _REENTRANT is defined */
+	#define _REENTRANT 1
+	#include <sys/types.h>
+	int main (void)
+	{
+	  return 0;
+	}
+	
+Performing C SOURCE FILE Test BSYMBOLIC_WORKS succeeded with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_621f6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_621f6.dir/build.make CMakeFiles/cmTC_621f6.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_621f6.dir/src.c.o
+/usr/bin/cc -DBSYMBOLIC_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -fPIE -o CMakeFiles/cmTC_621f6.dir/src.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_621f6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_621f6.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_621f6.dir/src.c.o -o cmTC_621f6  -lm -Wl,-Bsymbolic-functions 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	int main (void)
+	{
+	  return 0;
+	}
+	
+Performing C SOURCE FILE Test VERSION_SCRIPT_WORKS succeeded with the following output:
+Change Dir: /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5b591/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5b591.dir/build.make CMakeFiles/cmTC_5b591.dir/build
+gmake[1]: Entering directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5b591.dir/src.c.o
+/usr/bin/cc -DVERSION_SCRIPT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -fPIE -o CMakeFiles/cmTC_5b591.dir/src.c.o -c /home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5b591
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b591.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_5b591.dir/src.c.o -o cmTC_5b591  -lm -Wl,--version-script,/home/hackbro/Documents/HealStar/frontend/json-c-build/check-version-script.sym 
+gmake[1]: Leaving directory '/home/hackbro/Documents/HealStar/frontend/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	int main (void)
+	{
+	  return 0;
+	}
+	
