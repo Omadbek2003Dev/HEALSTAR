@@ -201,7 +201,7 @@
                                     <property name="height-request">80</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Naseer</property>
+                                    <property name="label" translatable="yes">Dr. Anna</property>
                                     <attributes>
                                       <attribute name="font-desc" value="Sans Bold 20"/>
                                     </attributes>
@@ -593,7 +593,7 @@
                             <property name="height-request">100</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Naseer Abdulraheem</property>
+                            <property name="label" translatable="yes">Anna Khanna</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans Bold Italic 25"/>
                             </attributes>
@@ -811,7 +811,7 @@
                                       <object class="GtkImage" id="sendMessageButtonImage">
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="pixbuf">../../static/sendIcon.jpg</property>
+                                        <property name="pixbuf">static/sendIcon.jpg</property>
                                         <property name="icon_size">6</property>
                                       </object>
                                     </child>
@@ -912,8 +912,8 @@
                             <property name="height-request">80</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">      Naseer 
-Abdulraheem</property>
+                            <property name="label" translatable="yes">  Anna
+Khanna</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans Bold 20"/>
                             </attributes>
@@ -947,7 +947,7 @@ Abdulraheem</property>
                             <property name="width-request">90</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes"> n.abdulrahim@inha.uz</property>
+                            <property name="label" translatable="yes"> annakhanna@gmail.uz</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans 15"/>
                             </attributes>

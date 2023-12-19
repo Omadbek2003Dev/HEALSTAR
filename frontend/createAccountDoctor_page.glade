@@ -2,15 +2,6 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkEntryBuffer" id="entryAddressDoctor"/>
-  <object class="GtkEntryBuffer" id="entryExperienceDoctor"/>
-  <object class="GtkEntryBuffer" id="entryHospitalsDoctor"/>
-  <object class="GtkEntryBuffer" id="entryNameDoctor"/>
-  <object class="GtkEntryBuffer" id="entryPhoneNumberDoctor"/>
-  <object class="GtkEntryBuffer" id="entryQualificationDoctor"/>
-  <object class="GtkEntryBuffer" id="entrySpecializationDoctor"/>
-  <object class="GtkEntryBuffer" id="entrySurnameDoctor"/>
-  <object class="GtkEntryBuffer" id="entryWorkingHoursDoctor"/>
   <object class="GtkWindow" id="createAccountPageDoctorWindow">
     <property name="width-request">476</property>
     <property name="height-request">668</property>
@@ -59,7 +50,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entrySurnameDoctor</property>
             <property name="placeholder-text" translatable="yes">Surname</property>
             <property name="input-purpose">name</property>
           </object>
@@ -87,7 +77,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entrySpecializationDoctor</property>
             <property name="placeholder-text" translatable="yes">Specialization</property>
           </object>
           <packing>
@@ -100,7 +89,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryAddressDoctor</property>
             <property name="placeholder-text" translatable="yes">Address</property>
           </object>
           <packing>
@@ -127,7 +115,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryPhoneNumberDoctor</property>
             <property name="placeholder-text" translatable="yes">Phone Number</property>
             <property name="input-purpose">phone</property>
           </object>
@@ -153,7 +140,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryNameDoctor</property>
             <property name="placeholder-text" translatable="yes">Name</property>
             <property name="input-purpose">name</property>
           </object>
@@ -167,7 +153,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryQualificationDoctor</property>
             <property name="placeholder-text" translatable="yes">Qualification</property>
           </object>
           <packing>
@@ -180,7 +165,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryExperienceDoctor</property>
             <property name="placeholder-text" translatable="yes">Experience</property>
           </object>
           <packing>
@@ -193,7 +177,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryHospitalsDoctor</property>
             <property name="placeholder-text" translatable="yes">Hospital / Hospital</property>
           </object>
           <packing>
@@ -206,7 +189,6 @@
             <property name="width-request">216</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryWorkingHoursDoctor</property>
             <property name="placeholder-text" translatable="yes">start(hh : mm) - finish(hh :mm)</property>
           </object>
           <packing>

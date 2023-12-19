@@ -17,61 +17,61 @@ struct http serv;
 int user_authentication = 0;
 
 //Doctor variables
-char doctor_name[64];
-char doctor_surname[64];
-char doctor_id[32];
-char doctor_specialization[64];
-char doctor_qualification[64];
-char doctor_address[64];
-char doctor_phone[16];
-char doctor_experience[32];
-char doctor_hospitals[64];
-char doctor_working_hours[32];
-char doctor_email[64];
-char doctor_password[64];
-char doctor_confirm_password[64];
+char doctor_name[255];
+char doctor_surname[255];
+char doctor_id[255];
+char doctor_specialization[255];
+char doctor_qualification[255];
+char doctor_address[255];
+char doctor_phone[255];
+char doctor_experience[255];
+char doctor_hospitals[255];
+char doctor_working_hours[255];
+char doctor_email[255];
+char doctor_password[255];
+char doctor_confirm_password[255];
 //Admin variables
-char admin_email[64];
-char admin_password[64];
-char admin_confirm_password[64];
+char admin_email[255];
+char admin_password[255];
+char admin_confirm_password[255];
 //Hospital variables
-char hospital_name[64];
-char hospital_address[64];
-char hospital_phone[16];
-char hospital_email[64];
-char hospital_password[64];
-char hospital_confirm_password[64];
+char hospital_name[255];
+char hospital_address[255];
+char hospital_phone[255];
+char hospital_email[255];
+char hospital_password[255];
+char hospital_confirm_password[255];
 //Appointment variables
-char appointment_date[32];
-char appointment_time[32];
-char appointment_reason[64];
-char appointment_doctor[64];
-char appointment_patient[64];
-char appointment_status[32];
+char appointment_date[255];
+char appointment_time[255];
+char appointment_reason[255];
+char appointment_doctor[255];
+char appointment_patient[255];
+char appointment_status[255];
 //Prescription variables
-char prescription_date[32];
-char prescription_doctor[64];
-char prescription_patient[64];
-char prescription_medicine[64];
-char prescription_dosage[64];
-char prescription_duration[64];
-char prescription_status[32];
+char prescription_date[255];
+char prescription_doctor[255];
+char prescription_patient[255];
+char prescription_medicine[255];
+char prescription_dosage[255];
+char prescription_duration[255];
+char prescription_status[255];
 //Report variables
-char report_date[32];
-char report_doctor[64];
-char report_patient[64];
-char report_description[64];
-char report_status[32];
+char report_date[255];
+char report_doctor[255];
+char report_patient[255];
+char report_description[255];
+char report_status[255];
 //Patient variables
-char patient_name[64];
-char patient_surname[64];
-char patient_id[32];
-char patient_working_position[64];
-char patient_address[64];
-char patient_phone[16];
-char patient_email[64];
-char patient_password[64];
-char patient_confirm_password[64];
+char patient_name[255];
+char patient_surname[255];
+char patient_id[255];
+char patient_working_position[255];
+char patient_address[255];
+char patient_phone[255];
+char patient_email[255];
+char patient_password[255];
+char patient_confirm_password[255];
 
 // Make all Widgets global
 //Welcome Page
@@ -79,7 +79,7 @@ GtkWidget *welcomePageWindow;
 GtkWidget *doctorButton;
 GtkWidget *patientButton;
 GtkBuilder *welcome_builder;
-char *role = NULL;
+char *role = "patient";
 GtkWindow *openWindow;
 
 //Sign In Page
@@ -198,7 +198,7 @@ GtkWidget *searchingPageResultsHOSPITALS;
 GtkBuilder *searchingPageResultsHOSPITALS_Builder;
 
 
-// Function prototypess
+// Function prototypes till Login Page
 void on_doctorButton_clicked(GtkWidget *widget, gpointer data);
 void on_patientButton_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonSignInPage_clicked(GtkWidget *widget, gpointer data);
@@ -219,6 +219,7 @@ void on_logInButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data);
 void on_submitLoginButton_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonLoginPage_clicked(GtkWidget *widget, gpointer data);
+// Function prototypes after Login Page
 void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data);
 void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data);
 void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data);
@@ -257,7 +258,7 @@ char* generateID(char role) {
     } else {
         // Invalid role
         free(id);
-        return NULL;
+        return 1;
     }
     return id;
 }
@@ -349,13 +350,19 @@ void on_createAccountButton_clicked(GtkWidget *widget, gpointer data) {
     } else if (strcmp(role, "patient") == 0) {
         on_createAccountButtonForPatient(role);
     } else {
-        // Do nothing
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
 
 void on_logInButton_clicked(GtkWidget *widget, gpointer data) {
-    // Hide the welcome page
-
+    // Hide the sign-in page
     gtk_widget_hide(openWindow);
     // Import the UI from Glade
     logInPage_builder = gtk_builder_new_from_file("login_page.glade");
@@ -373,158 +380,6 @@ void on_logInButton_clicked(GtkWidget *widget, gpointer data) {
     // Show the Registration Page
     openWindow = loginPageWindow;
     gtk_widget_show(openWindow);
-}
-
-gboolean validationLogin() {
-    gboolean isUsernameValid = validate_non_empty(usernameInput, "Username");
-    gboolean isPasswordValid = validate_non_empty(passwordInput, "Password");
-
-    return isUsernameValid && isPasswordValid;
-}
-
-void on_backButtonLoginPage_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Log In Page 
-    gtk_widget_hide(openWindow);
-    // Show the Welcome Page
-    openWindow = signInPageWindow;
-    gtk_widget_show(signInPageWindow);
-}
-
-void on_submitLoginButton_clicked(GtkWidget *widget, gpointer data) {
-    if (!validationLogin()) {
-        return;
-    }
-    if (strcmp(role, "doctor") == 0) {
-        show_Dashboard(role);
-    } else if (strcmp(role, "patient") == 0) {
-        show_Categories(role);
-    } else {
-        // Do nothing
-    }
-}
-
-void show_Dashboard(char *role){
-    // Hide the Log In Page
-    gtk_widget_hide(openWindow);
-    // Import UI from Glade
-    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
-    // Get all widgets
-    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
-    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
-    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
-    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
-    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
-    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
-    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
-    // Connect the destroy signal of the window
-    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-    // Connect all signals
-    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
-    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
-    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
-    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
-    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
-    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
-    // Show the Dashboard page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-} 
-
-void show_Categories(char *role){
-    // Get ui from Glade
-    categoriesPage_builder = gtk_builder_new_from_file("mainCategories_page.glade");
-    mainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "mainPage"));
-    openWindow = mainPage;
-    gtk_widget_show(openWindow);
-}
-
-
-void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
-    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
-    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
-    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
-    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
-    hospitalsButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "hospitalsButtonDoctorsPageClient"));
-    
-    // Connect signals 
-    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
-    g_signal_connect(hospitalsButtonDoctorsPageClient, "clicked", G_CALLBACK(on_hospitalsButtonDoctorsPageClient_clicked), NULL);
-
-    openWindow = doctorsPageClientWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Doctors Page
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(doctorsPageClientWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    searchPage_Builder = gtk_builder_new_from_file("searching_page.glade");
-    ListOfRegions = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "ListOfRegions"));
-    listStoreGlobalLocal = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "listStoreGlobalLocal"));
-    searchType = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchType"));
-    searchingPage= GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingPage"));
-    searchingWindow = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingWindow"));
-    mainButtons = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "mainButtons"));
-
-    openWindow = searchingPage;
-    gtk_widget_show(openWindow);
-}
-
-void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data){
-    // Open UI from Glade 
-    searchingPageResultsHOSPITALS_Builder = gtk_builder_new_from_file("searching_page.glade");
-    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS"));
-    // SHow the Hospital Page
-    openWindow = searchingPageResultsHOSPITALS;
-    gtk_widget_show(openWindow);
-
-}
-
-void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data){
-    // Hide Active Page
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_menuButtonMenuBarMessage_clicked(GtkWidget *widget, gpointer data){
-
-}
-
-void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
-    // Hide Dashboard Page
-    gtk_widget_hide(openWindow);
-    // Show Welcome Page
-    openWindow = welcomePageWindow;
-    gtk_widget_show_all(openWindow);
-}
-
-void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data){
-
 }
 
 
@@ -573,17 +428,18 @@ void on_submitButtonCreateAccountPageDoctor_clicked(GtkWidget *widget, gpointer 
         return;
     }
     // Get the doctor ID
+    role = "doctor";
     char *doctorID = generateID(role);
-    strcpy(doctor_surname, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entrySurnameDoctor"))));
-    strcpy(doctor_name, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryNameDoctor"))));
+    strcpy(doctor_surname, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorSurnameEntry"))));
+    strcpy(doctor_name, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorNameEntry"))));
     strcpy(doctor_id, doctorID);
-    strcpy(doctor_specialization, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entrySpecializationDoctor"))));
-    strcpy(doctor_qualification, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryQualificationDoctor"))));
-    strcpy(doctor_address, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryAddressDoctor"))));
-    strcpy(doctor_phone, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryPhoneNumberDoctor"))));
-    strcpy(doctor_experience, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryExperienceDoctor"))));
-    strcpy(doctor_hospitals, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryHospitalsDoctor"))));
-    strcpy(doctor_working_hours, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPageDoctor_builder, "entryWorkingHoursDoctor"))));
+    strcpy(doctor_specialization, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorSpecializationEntry"))));
+    strcpy(doctor_qualification, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorQualificationEntry"))));
+    strcpy(doctor_address, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorAddressEntry"))));
+    strcpy(doctor_phone, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorPhoneNumberEntry"))));
+    strcpy(doctor_experience, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorExperienceEntry"))));
+    strcpy(doctor_hospitals, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorHospitalsEntry"))));
+    strcpy(doctor_working_hours, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPageDoctor_builder, "createAccountPageDoctorWorkingHoursEntry"))));
     char *body_prepare = "\
     { \
         \"doctor_surname\": \"%s\", \
@@ -597,25 +453,30 @@ void on_submitButtonCreateAccountPageDoctor_clicked(GtkWidget *widget, gpointer 
         \"doctor_hospitals\": \"%s\", \
         \"doctor_working_hours\": \"%s\", \
     }";
-    char post_body[1024];
+    char post_body[4096];
 	sprintf(post_body, body_prepare, doctor_surname, doctor_name, doctor_id, doctor_specialization, doctor_qualification, doctor_address, doctor_phone, doctor_experience, doctor_hospitals, doctor_working_hours);
     char *response_body = NULL;
     int response_body_size = 0;
 
-    int ret_code = http_post(&serv, "/api/doctor/add", post_body, sizeof(post_body), &response_body, &response_body_size);
-	
+    //int ret_code = http_post(&serv, "/api/doctor/add", post_body, sizeof(post_body), &response_body, &response_body_size);
+	int ret_code = 200;
 	if(ret_code == 200)
 	{	
-        user_authentication = 1;
         // Hide the sign-up page
         gtk_widget_hide(openWindow);
         // Import the Registration UI from Glade
         on_submitButton_clicked(widget, data);
     } else {
-        gtk_widget_set_sensitive(submitButtonCreateAccountPageDoctor, FALSE);
+        // Validation for incorrect ret_code
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in request.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
-
 //  Validation for Doctor Registration Page
 gboolean validate_non_empty(GtkWidget *entry, const gchar *entry_name) {
     const gchar *text = gtk_entry_get_text(GTK_ENTRY(entry));
@@ -688,14 +549,15 @@ void on_submitButtonCreateAccountPagePatient_clicked(GtkWidget *widget, gpointer
     if (!validationPatientRegistration()) {
         return;
     }
+    role = "patient";
     // Get the patient ID
     char *patientID = generateID(role);
-    strcpy(patient_surname, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPagePatient_builder, "entrySurnamePatient"))));
-    strcpy(patient_name, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPagePatient_builder, "entryNamePatient"))));
+    strcpy(patient_surname, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientSurnameEntry"))));
+    strcpy(patient_name, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientNameEntry"))));
     strcpy(patient_id, patientID);
-    strcpy(patient_working_position, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPagePatient_builder, "entryWorkingPositionPatient"))));
-    strcpy(patient_address, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPagePatient_builder, "entryAddressPatient"))));
-    strcpy(patient_phone, gtk_entry_buffer_get_text(GTK_WIDGET(gtk_builder_get_object(createAccountPagePatient_builder, "entryPhoneNumberPatient"))));
+    strcpy(patient_working_position, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientWorkingPositionEntry"))));
+    strcpy(patient_address, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientAddressEntry"))));
+    strcpy(patient_phone, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientPhoneNumberEntry"))));
     char *body_prepare = "\
     { \
         \"patient_surname\": \"%s\", \
@@ -710,20 +572,25 @@ void on_submitButtonCreateAccountPagePatient_clicked(GtkWidget *widget, gpointer
     char *response_body = NULL;
     int response_body_size = 0;
 
-    int ret_code = http_post(&serv, "/api/patient/add", post_body, sizeof(post_body), &response_body, &response_body_size);
-
+    //int ret_code = http_post(&serv, "/api/patient/add", post_body, sizeof(post_body), &response_body, &response_body_size);
+    int ret_code = 200;
     if(ret_code == 200)
     {	
-        user_authentication = 1;
         // Hide the sign-up page
         gtk_widget_hide(openWindow);
         // Import the Registration UI from Glade
         on_submitButton_clicked(widget, data);
     } else {
-        gtk_widget_set_sensitive(submitButtonCreateAccountPagePatient, FALSE);
+        // Validation for incorrect ret_code
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in request.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
-
 // Validation for Patient Page
 gboolean validationPatientRegistration() {
     gboolean isSurnameValid = validate_non_empty(createAccountPagePatientSurnameEntry, "Surname");
@@ -736,6 +603,7 @@ gboolean validationPatientRegistration() {
     return isSurnameValid && isNameValid && isWorkingPositionValid && isAddressValid && isPhoneNumberValid;
 }
 
+
 // ********************************** Registration Page *********************************************
 void on_submitButton_clicked(GtkWidget *widget, gpointer data) {
     // Import the UI from Glade
@@ -743,6 +611,20 @@ void on_submitButton_clicked(GtkWidget *widget, gpointer data) {
     // Get all widgets
     registrationWindow = GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationWindow"));
     registrationIDLabel = GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationIDLabel"));
+    if (strcmp(role, "doctor") == 0) {
+        gtk_label_set_text(GTK_LABEL(registrationIDLabel), doctor_id);
+    } else if (strcmp(role, "patient") == 0) {
+        gtk_label_set_text(GTK_LABEL(registrationIDLabel), patient_id);
+    } else {
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    }
     registrationEmailEntry = GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationEmailEntry"));
     registrationPasswordEntry = GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationPasswordEntry"));
     registrationConfirmPasswordEntry = GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationConfirmPasswordEntry"));
@@ -770,7 +652,14 @@ void on_backButtonRegistration_clicked(GtkWidget *widget, gpointer data) {
         openWindow = createAccountPagePatientWindow;
         gtk_widget_show(openWindow);
     } else {
-        // Do nothing
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
 
@@ -779,67 +668,153 @@ void on_backButtonRegistration_clicked(GtkWidget *widget, gpointer data) {
 void on_submitButtonRegistration_clicked(GtkWidget *widget, gpointer data) {
     // Hide the sign-in page
     gtk_widget_hide(openWindow);
+    // Posting the data to the server
     if (strcmp(role, "doctor") == 0) {
-        if (strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorSurnameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorNameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorSpecializationEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorQualificationEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorAddressEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorPhoneNumberEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorExperienceEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorHospitalsEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorWorkingHoursEntry)), "") == 0) {
-            // Show the rejection page
-            openWindow = rejectionPageWindow;
-            gtk_widget_show(openWindow);
-            // Import the UI from Glade
-            rejectionPage_builder = gtk_builder_new_from_file("rejection_page.glade");
-            // Get all widgets
-            rejectionPageWindow = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "rejectionPageWindow"));
-            backButtonRejectionPage = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "backButtonRejectionPage"));
-            // Connect the destroy signal of the window
-            g_signal_connect(rejectionPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-            // Connect all signals
-            g_signal_connect(backButtonRejectionPage, "clicked", G_CALLBACK(on_backButtonRejectionPage_clicked), NULL);
+        strcpy(doctor_email, gtk_entry_get_text(GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationEmailEntry"))));
+        strcpy(doctor_password, gtk_entry_get_text(GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationPasswordEntry"))));
+        strcpy(doctor_confirm_password, gtk_entry_get_text(GTK_WIDGET(gtk_builder_get_object(registration_builder, "registrationConfirmPasswordEntry"))));
+        if (strcmp(doctor_password, doctor_confirm_password) != 0) {
+            // Validation for password and confirm password
+            GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                       GTK_DIALOG_MODAL,
+                                                       GTK_MESSAGE_ERROR,
+                                                       GTK_BUTTONS_OK,
+                                                       "Password and Confirm Password do not match.");
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
+        }
+        char *body_prepare = "\
+        { \
+            \"doctor_email\": \"%s\", \
+            \"doctor_password\": \"%s\", \
+        }";
+        char post_body[1024];
+        sprintf(post_body, body_prepare, doctor_email, doctor_password);
+        char *response_body = NULL;
+        int response_body_size = 0;
+
+        //int ret_code = http_post(&serv, "/api/doctor/add/secured", post_body, sizeof(post_body), &response_body, &response_body_size);
+        int ret_code = 200;
+        if(ret_code == 200)
+        {	
+            if (strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorSurnameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorNameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorSpecializationEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorQualificationEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorAddressEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorPhoneNumberEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorExperienceEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorHospitalsEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPageDoctorWorkingHoursEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationEmailEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationPasswordEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationConfirmPasswordEntry)), "") == 0) {
+                user_authentication = 0;
+                // Show the rejection page
+                openWindow = rejectionPageWindow;
+                gtk_widget_show(openWindow);
+                // Import the UI from Glade
+                rejectionPage_builder = gtk_builder_new_from_file("rejection_page.glade");
+                // Get all widgets
+                rejectionPageWindow = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "rejectionPageWindow"));
+                backButtonRejectionPage = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "backButtonRejectionPage"));
+                // Connect the destroy signal of the window
+                g_signal_connect(rejectionPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+                // Connect all signals
+                g_signal_connect(backButtonRejectionPage, "clicked", G_CALLBACK(on_backButtonRejectionPage_clicked), NULL);
+            } else {
+                user_authentication = 1;
+                // Show the confirmation page
+                gtk_widget_show(confirmationPageWindow);
+                // Import the UI from Glade
+                confirmationPage_builder = gtk_builder_new_from_file("confirmation_page.glade");
+                // Get all widgets
+                confirmationPageWindow = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "confirmationPageWindow"));
+                loginButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "loginButtonConfirmationPage"));
+                backButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "backButtonConfirmationPage"));
+                // Connect the destroy signal of the window
+                g_signal_connect(confirmationPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+                // Connect all signals
+                g_signal_connect(loginButtonConfirmationPage, "clicked", G_CALLBACK(on_logInButtonConfirmationPage_clicked), NULL);
+                g_signal_connect(backButtonConfirmationPage, "clicked", G_CALLBACK(on_backButtonConfirmationPage_clicked), NULL);
+            }
         } else {
-            // Show the confirmation page
-            gtk_widget_show(confirmationPageWindow);
-            // Import the UI from Glade
-            confirmationPage_builder = gtk_builder_new_from_file("confirmation_page.glade");
-            // Get all widgets
-            confirmationPageWindow = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "confirmationPageWindow"));
-            loginButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "loginButtonConfirmationPage"));
-            backButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "backButtonConfirmationPage"));
-            // Connect the destroy signal of the window
-            g_signal_connect(confirmationPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-            // Connect all signals
-            g_signal_connect(loginButtonConfirmationPage, "clicked", G_CALLBACK(on_logInButtonConfirmationPage_clicked), NULL);
-            g_signal_connect(backButtonConfirmationPage, "clicked", G_CALLBACK(on_backButtonConfirmationPage_clicked), NULL);
+            // Validation for incorrect ret_code
+            GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                       GTK_DIALOG_MODAL,
+                                                       GTK_MESSAGE_ERROR,
+                                                       GTK_BUTTONS_OK,
+                                                       "Error in request.");
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
         }
     } else if (strcmp(role, "patient") == 0) {
-        if (strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientSurnameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientNameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientWorkingPositionEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientAddressEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientPhoneNumberEntry)), "") == 0) {
-            // Show the rejection page
-            openWindow = rejectionPageWindow;
-            gtk_widget_show(openWindow);
-            // Import the UI from Glade
-            rejectionPage_builder = gtk_builder_new_from_file("rejection_page.glade");
-            // Get all widgets
-            rejectionPageWindow = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "rejectionPageWindow"));
-            backButtonRejectionPage = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "backButtonRejectionPage"));
-            // Connect the destroy signal of the window
-            g_signal_connect(rejectionPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-            // Connect all signals
-            g_signal_connect(backButtonRejectionPage, "clicked", G_CALLBACK(on_backButtonRejectionPage_clicked), NULL);
+        strcpy(patient_email, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(registration_builder, "registrationEmailEntry"))));
+        strcpy(patient_password, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(registration_builder, "registrationPasswordEntry"))));
+        strcpy(patient_confirm_password, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(registration_builder, "registrationConfirmPasswordEntry"))));
+        if (strcmp(patient_password, patient_confirm_password) != 0) {
+            // Validation for password and confirm password
+            GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                       GTK_DIALOG_MODAL,
+                                                       GTK_MESSAGE_ERROR,
+                                                       GTK_BUTTONS_OK,
+                                                       "Password and Confirm Password do not match.");
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
+        }
+        char *body_prepare = "\
+        { \
+            \"patient_email\": \"%s\", \
+            \"patient_password\": \"%s\", \
+        }";
+        char post_body[1024];
+        sprintf(post_body, body_prepare, patient_email, patient_password);
+        char *response_body = NULL;
+        int response_body_size = 0;
+
+        //int ret_code = http_post(&serv, "/api/patient/add/secured", post_body, sizeof(post_body), &response_body, &response_body_size);
+        int ret_code = 200;
+        if(ret_code == 200)
+        {	
+            if (strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientSurnameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientNameEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientWorkingPositionEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientAddressEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(createAccountPagePatientPhoneNumberEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationEmailEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationPasswordEntry)), "") == 0 || strcmp(gtk_entry_get_text(GTK_ENTRY(registrationConfirmPasswordEntry)), "") == 0) {
+                user_authentication = 0;
+                // Show the rejection page
+                openWindow = rejectionPageWindow;
+                gtk_widget_show(openWindow);
+                // Import the UI from Glade
+                rejectionPage_builder = gtk_builder_new_from_file("rejection_page.glade");
+                // Get all widgets
+                rejectionPageWindow = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "rejectionPageWindow"));
+                backButtonRejectionPage = GTK_WIDGET(gtk_builder_get_object(rejectionPage_builder, "backButtonRejectionPage"));
+                // Connect the destroy signal of the window
+                g_signal_connect(rejectionPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+                // Connect all signals
+                g_signal_connect(backButtonRejectionPage, "clicked", G_CALLBACK(on_backButtonRejectionPage_clicked), NULL);
+            } else {
+                user_authentication = 1;
+                // Show the confirmation page
+                openWindow = confirmationPageWindow;
+                gtk_widget_show(openWindow);
+                // Import the UI from Glade
+                confirmationPage_builder = gtk_builder_new_from_file("confirmation_page.glade");
+                // Get all widgets
+                confirmationPageWindow = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "confirmationPageWindow"));
+                loginButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "loginButtonConfirmationPage"));
+                backButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "backButtonConfirmationPage"));
+                // Connect the destroy signal of the window
+                g_signal_connect(confirmationPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+                // Connect all signals
+                g_signal_connect(loginButtonConfirmationPage, "clicked", G_CALLBACK(on_logInButtonConfirmationPage_clicked), NULL);
+                g_signal_connect(backButtonConfirmationPage, "clicked", G_CALLBACK(on_backButtonConfirmationPage_clicked), NULL);
+            }
         } else {
-            // Show the confirmation page
-            openWindow = confirmationPageWindow;
-            gtk_widget_show(openWindow);
-            // Import the UI from Glade
-            confirmationPage_builder = gtk_builder_new_from_file("confirmation_page.glade");
-            // Get all widgets
-            confirmationPageWindow = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "confirmationPageWindow"));
-            loginButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "loginButtonConfirmationPage"));
-            backButtonConfirmationPage = GTK_WIDGET(gtk_builder_get_object(confirmationPage_builder, "backButtonConfirmationPage"));
-            // Connect the destroy signal of the window
-            g_signal_connect(confirmationPageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-            // Connect all signals
-            g_signal_connect(loginButtonConfirmationPage, "clicked", G_CALLBACK(on_logInButtonConfirmationPage_clicked), NULL);
-            g_signal_connect(backButtonConfirmationPage, "clicked", G_CALLBACK(on_backButtonConfirmationPage_clicked), NULL);
+            // Validation for incorrect ret_code
+            GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                       GTK_DIALOG_MODAL,
+                                                       GTK_MESSAGE_ERROR,
+                                                       GTK_BUTTONS_OK,
+                                                       "Error in request.");
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
         }
     } else {
-        // Do nothing 
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Incorrect role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
 
@@ -855,7 +830,14 @@ void on_backButtonRejectionPage_clicked(GtkWidget *widget, gpointer data) {
         openWindow = createAccountPagePatientWindow;
         gtk_widget_show(openWindow);
     } else {
-        // Do nothing
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
 
@@ -871,7 +853,14 @@ void on_backButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data) {
         openWindow = createAccountPagePatientWindow;
         gtk_widget_show(openWindow);
     } else {
-        // Do nothing
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Error in role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
 }
 
@@ -885,3 +874,164 @@ void on_logInButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data) {
     role = NULL;
 }
 
+
+// ********************************** Login Page *********************************************
+gboolean validationLogin() {
+    gboolean isUsernameValid = validate_non_empty(usernameInput, "Username");
+    gboolean isPasswordValid = validate_non_empty(passwordInput, "Password");
+
+    return isUsernameValid && isPasswordValid;
+}
+
+void on_backButtonLoginPage_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Log In Page 
+    gtk_widget_hide(openWindow);
+    // Show the Welcome Page
+    openWindow = signInPageWindow;
+    gtk_widget_show(signInPageWindow);
+}
+
+void on_submitLoginButton_clicked(GtkWidget *widget, gpointer data) {
+    if (!validationLogin()) {
+        return;
+    }
+    if (strcmp(role, "doctor") == 0) {
+        show_Dashboard(role);
+    } else if (strcmp(role, "patient") == 0) {
+        show_Categories(role);
+    } else {
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Incorrect role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    }
+}
+
+
+// ********************************** Dashboard Page *********************************************
+void show_Dashboard(char *role){
+    // Hide the Log In Page
+    gtk_widget_hide(openWindow);
+    // Import UI from Glade
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    // Show the Dashboard page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+} 
+
+void show_Categories(char *role){
+    // Get ui from Glade
+    categoriesPage_builder = gtk_builder_new_from_file("mainCategories_page.glade");
+    mainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "mainPage"));
+    openWindow = mainPage;
+    gtk_widget_show(openWindow);
+}
+
+
+void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    hospitalsButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "hospitalsButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(hospitalsButtonDoctorsPageClient, "clicked", G_CALLBACK(on_hospitalsButtonDoctorsPageClient_clicked), NULL);
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Doctors Page
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    gtk_widget_hide(doctorsPageClientWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data){
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    searchPage_Builder = gtk_builder_new_from_file("searching_page.glade");
+    ListOfRegions = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "ListOfRegions"));
+    listStoreGlobalLocal = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "listStoreGlobalLocal"));
+    searchType = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchType"));
+    searchingPage= GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingPage"));
+    searchingWindow = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingWindow"));
+    mainButtons = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "mainButtons"));
+    // Show the Searching Page
+    openWindow = searchingPage;
+    gtk_widget_show(openWindow);
+}
+
+void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data){
+    // Open UI from Glade 
+    searchingPageResultsHOSPITALS_Builder = gtk_builder_new_from_file("searching_page.glade");
+    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS"));
+    // SHow the Hospital Page
+    openWindow = searchingPageResultsHOSPITALS;
+    gtk_widget_show(openWindow);
+}
+
+void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data){
+    // Hide Active Page
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_menuButtonMenuBarMessage_clicked(GtkWidget *widget, gpointer data){
+
+}
+
+void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
+    // Hide Dashboard Page
+    gtk_widget_hide(openWindow);
+    // Show Welcome Page
+    openWindow = welcomePageWindow;
+    gtk_widget_show_all(openWindow);
+}
+
+void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data){
+
+}

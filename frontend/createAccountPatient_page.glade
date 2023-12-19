@@ -2,11 +2,6 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkEntryBuffer" id="entryAddressPatient"/>
-  <object class="GtkEntryBuffer" id="entryNamePatient"/>
-  <object class="GtkEntryBuffer" id="entryPhoneNumberPatient"/>
-  <object class="GtkEntryBuffer" id="entrySurnamePatient"/>
-  <object class="GtkEntryBuffer" id="entryWorkingPositionPatient"/>
   <object class="GtkWindow" id="createAccountPagePatientWindow">
     <property name="width-request">476</property>
     <property name="height-request">668</property>
@@ -55,7 +50,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entrySurnamePatient</property>
             <property name="placeholder-text" translatable="yes">Surname</property>
             <property name="input-purpose">name</property>
           </object>
@@ -83,7 +77,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryWorkingPositionPatient</property>
             <property name="placeholder-text" translatable="yes">Working Position</property>
           </object>
           <packing>
@@ -96,7 +89,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryAddressPatient</property>
             <property name="placeholder-text" translatable="yes">Address</property>
           </object>
           <packing>
@@ -123,7 +115,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryPhoneNumberPatient</property>
             <property name="placeholder-text" translatable="yes">Phone Number</property>
             <property name="input-purpose">phone</property>
           </object>
@@ -149,7 +140,6 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="buffer">entryNamePatient</property>
             <property name="placeholder-text" translatable="yes">Name</property>
             <property name="input-purpose">name</property>
           </object>
