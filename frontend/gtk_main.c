@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <http/http-api.h>
 #include <json-c/json.h>
+#include <pango/pango.h> 
+#include <pango/pangocairo.h> 
 
 //Used variables
 struct http serv;
@@ -72,6 +74,7 @@ char patient_phone[255];
 char patient_email[255];
 char patient_password[255];
 char patient_confirm_password[255];
+static gint y_position = 730;
 #define MAX_STRING_LENGTH 255
 
 // Make all Widgets global
@@ -155,6 +158,17 @@ GtkWidget *homeButtonMessage;
 GtkWidget *menuButtonMenuBarMessage;
 GtkWidget *logoutButtonMessagePage;
 GtkWidget *sendMessageButton;
+GtkWidget *searchReceiver1Name;
+GtkWidget *searchReceiver2Name;
+GtkWidget *searchReceiver3Name;
+GtkWidget *showChat1;
+GtkWidget *showChat2;
+GtkWidget *showChat3;
+GtkWidget *receiverHeaderName;
+GtkWidget *accountBarMessageNameLabel;
+GtkWidget *sendMessageButton;
+GtkWidget *chatMessageEntry;
+GtkWidget *chatMessageBodyFixed;
 GtkBuilder *dashboardPage_builder;
 
 // Hospital Page
@@ -283,6 +297,11 @@ void on_searchingHospital_HospitalButton8_clicked(GtkWidget *widget, gpointer da
 void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+// Show chat Functions
+void on_showChat1_clicked(GtkWidget *widget, gpointer data);
+void on_showChat2_clicked(GtkWidget *widget, gpointer data);
+void on_showChat3_clicked(GtkWidget *widget, gpointer data);
+// void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data);
 
 
 // Function to generate unique IDs
@@ -988,6 +1007,17 @@ void show_Dashboard(char *role){
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -997,10 +1027,64 @@ void show_Dashboard(char *role){
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     // Show the Dashboard page
     openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
 } 
+
+void on_showChat1_clicked(GtkWidget *widget, gpointer data) {
+    // Retrieve the value of searchReceiver1Name
+    const gchar *receiverName = gtk_label_get_text(searchReceiver1Name);
+    // Update the labels
+    gtk_label_set_text(receiverHeaderName, receiverName);
+    gtk_label_set_text(accountBarMessageNameLabel, receiverName);
+}
+
+void on_showChat2_clicked(GtkWidget *widget, gpointer data) {
+    // Retrieve the value of searchReceiver1Name
+    const gchar *receiverName = gtk_label_get_text(searchReceiver2Name);
+    // Update the labels
+    gtk_label_set_text(receiverHeaderName, receiverName);
+    gtk_label_set_text(accountBarMessageNameLabel, receiverName);
+}
+
+void on_showChat3_clicked(GtkWidget *widget, gpointer data) {
+    // Retrieve the value of searchReceiver1Name
+    const gchar *receiverName = gtk_label_get_text(searchReceiver3Name);
+    // Update the labels
+    gtk_label_set_text(receiverHeaderName, receiverName);
+    gtk_label_set_text(accountBarMessageNameLabel, receiverName);
+}
+
+void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data) {
+    // Retrieve the value of chatMessageEntry
+    const gchar *messageText = gtk_entry_get_text(GTK_ENTRY(chatMessageEntry));
+
+    // Create a new GtkLabel
+    GtkWidget *newLabel = gtk_label_new(messageText);
+
+    // Set properties for the new label
+    gtk_widget_set_size_request(newLabel, 100, 80);
+    gtk_widget_set_visible(newLabel, TRUE);
+    gtk_widget_set_can_focus(newLabel, FALSE);
+
+    // Set attributes for the new label (you can customize this)
+    PangoAttrList *attrList = pango_attr_list_new();
+    PangoAttribute *backgroundAttr = pango_attr_background_new(0x3D3D, 0x3838, 0x4646);
+    pango_attr_list_insert(attrList, backgroundAttr);
+    gtk_label_set_attributes(GTK_LABEL(newLabel), attrList);
+
+    // Add the new label to chatMessageBodyFixed
+    gtk_fixed_put(GTK_FIXED(chatMessageBodyFixed), newLabel, 345, y_position);
+
+    // Adjust the y_position for the next label
+    y_position += 80;  // You may need to adjust this based on your layout
+}
+
 
 void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
     // Hide Dashboard Page
@@ -1052,6 +1136,17 @@ void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -1060,6 +1155,10 @@ void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     // Show the Dashboard page
     openWindow = messagePageWindow;
@@ -1079,6 +1178,17 @@ void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -1087,6 +1197,10 @@ void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     // Show the Dashboard page
     openWindow = messagePageWindow;
@@ -1106,6 +1220,17 @@ void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -1114,6 +1239,10 @@ void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     // Show the Dashboard page
     openWindow = messagePageWindow;
@@ -1137,6 +1266,17 @@ void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data)
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -1145,6 +1285,10 @@ void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data)
     g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     // Show the Dashboard page
     openWindow = messagePageWindow;
@@ -1277,10 +1421,6 @@ void on_menuButtonMenuBarMessage_clicked(GtkWidget *widget, gpointer data){
 
 }
 
-void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data){
-
-}
-
 void show_Categories(char *role){
     // Close Active Window
     gtk_widget_hide(openWindow);
@@ -1334,6 +1474,17 @@ void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data){
     menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
     logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
     sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    searchReceiver1Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver1Name"));
+    searchReceiver2Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver2Name"));
+    searchReceiver3Name = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "searchReceiver3Name"));
+    showChat1 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat1"));
+    showChat2 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat2"));
+    showChat3 = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "showChat3"));
+    receiverHeaderName = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "receiverHeaderName"));
+    accountBarMessageNameLabel = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "accountBarMessageNameLabel"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    chatMessageEntry = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageEntry"));
+    chatMessageBodyFixed = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "chatMessageBodyFixed"));
     // Connect the destroy signal of the window
     g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     // Connect all signals
@@ -1342,6 +1493,10 @@ void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data){
     g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
     g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
     g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    g_signal_connect(showChat1, "clicked", G_CALLBACK(on_showChat1_clicked), NULL);
+    g_signal_connect(showChat2, "clicked", G_CALLBACK(on_showChat2_clicked), NULL);
+    g_signal_connect(showChat3, "clicked", G_CALLBACK(on_showChat3_clicked), NULL);
     g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     openWindow = messagePageWindow;
     gtk_widget_show(messagePageWindow);
