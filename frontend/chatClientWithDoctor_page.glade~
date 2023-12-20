@@ -940,7 +940,7 @@
                                       <object class="GtkImage" id="sendMessageButtonImage">
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="pixbuf">static/sendIcon.jpg</property>
+                                        <property name="pixbuf">../../static/sendIcon.jpg</property>
                                         <property name="icon_size">6</property>
                                       </object>
                                     </child>

@@ -182,6 +182,14 @@ GtkWidget *logoutButtonDoctorsPageClient;
 GtkWidget *homeButtonDoctorsPageClient;
 GtkWidget *messagesButtonDoctorPageClient;
 GtkWidget *hospitalsButtonDoctorsPageClient;
+GtkWidget *doctor1ButtonDoctorsPageClient;
+GtkWidget *doctor2ButtonDoctorsPageClient;
+GtkWidget *doctor3ButtonDoctorsPageClient;
+GtkWidget *doctor4ButtonDoctorsPageClient;
+GtkWidget *doctor5ButtonDoctorsPageClient;
+GtkWidget *doctor6ButtonDoctorsPageClient;
+GtkWidget *doctor7ButtonDoctorsPageClient;
+GtkWidget *doctor8ButtonDoctorsPageClient;
 GtkBuilder *doctorsPage_builder;
 
 //Search Page
@@ -194,8 +202,19 @@ GtkWidget *mainButtons;
 GtkBuilder *searchPage_Builder;
 
 // Searching Hospital Page
-GtkWidget *searchingPageResultsHOSPITALS;
-GtkBuilder *searchingPageResultsHOSPITALS_Builder;
+GtkWidget *searchingPageHospital;
+GtkWidget *searchingHospitalHomeButton;
+GtkWidget *searchingHospital_HospitalButton;
+GtkWidget *searchingHospitalProfileButton;
+GtkWidget *searchingHospital_HospitalButton1;
+GtkWidget *searchingHospital_HospitalButton2;
+GtkWidget *searchingHospital_HospitalButton3;
+GtkWidget *searchingHospital_HospitalButton4;
+GtkWidget *searchingHospital_HospitalButton5;
+GtkWidget *searchingHospital_HospitalButton6;
+GtkWidget *searchingHospital_HospitalButton7;
+GtkWidget *searchingHospital_HospitalButton8;
+GtkBuilder *searchingPageHospital_Builder;
 
 
 // Function prototypes till Login Page
@@ -247,6 +266,28 @@ void on_oncologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
 void on_pediatricsButtonCategories_clicked(GtkWidget *widget, gpointer data);
 void on_obstetricsAndGynecologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
 void on_psychiatryButtonCategories_clicked(GtkWidget *widget, gpointer data);
+// Searching Doctors Functions
+void on_searchingHospitalHomeButton_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospitalProfileButton_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton1_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton2_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton3_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton4_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton5_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton6_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton7_clicked(GtkWidget *widget, gpointer data);
+void on_searchingHospital_HospitalButton8_clicked(GtkWidget *widget, gpointer data);
+// Searching Doctor Functions
+void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor4ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor5ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor6ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor7ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+void on_doctor8ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+
 
 // Function to generate unique IDs
 char* generateID(char role) {
@@ -974,12 +1015,92 @@ void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
     messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
     hospitalsButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "hospitalsButtonDoctorsPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    doctor4ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor4ButtonDoctorsPageClient"));
+    doctor5ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor5ButtonDoctorsPageClient"));
+    doctor6ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor6ButtonDoctorsPageClient"));
+    doctor7ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor7ButtonDoctorsPageClient"));
+    doctor8ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor8ButtonDoctorsPageClient"));
     // Connect signals 
     g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
     g_signal_connect(hospitalsButtonDoctorsPageClient, "clicked", G_CALLBACK(on_hospitalsButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor4ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor4ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor5ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor5ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor6ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor6ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor7ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor7ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor8ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor8ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor4ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor5ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor6ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor7ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_doctor8ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Show UI from Glade
+    gtk_widget_hide(openWindow);
+    // Show Dashboard Page
+    openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
 }
 
@@ -992,10 +1113,7 @@ void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
 }
 
 void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
+    gtk_widget_hide(doctorsPageClientWindow);
 }
 
 void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data){
@@ -1007,28 +1125,126 @@ void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data)
 
 void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
     gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    searchPage_Builder = gtk_builder_new_from_file("searching_page.glade");
-    ListOfRegions = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "ListOfRegions"));
-    listStoreGlobalLocal = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "listStoreGlobalLocal"));
-    searchType = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchType"));
-    searchingPage= GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingPage"));
-    searchingWindow = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "searchingWindow"));
-    mainButtons = GTK_WIDGET(gtk_builder_get_object(searchPage_Builder, "mainButtons"));
+    searchingPageHospital_Builder = gtk_builder_new_from_file("searching_page.glade");
+    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
     // Show the Searching Page
-    openWindow = searchingPage;
+    openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
 }
 
 void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     // Open UI from Glade 
-    searchingPageResultsHOSPITALS_Builder = gtk_builder_new_from_file("searching_page.glade");
-    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS"));
+    searchingPageHospital_Builder = gtk_builder_new_from_file("searching_page.glade");
+    searchingHospitalHomeButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospitalHomeButton"));
+    searchingHospital_HospitalButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton"));
+    searchingHospitalProfileButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospitalProfileButton"));
+    searchingHospital_HospitalButton1 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton1"));
+    searchingHospital_HospitalButton2 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton2"));
+    searchingHospital_HospitalButton3 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton3"));
+    searchingHospital_HospitalButton4 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton4"));
+    searchingHospital_HospitalButton5 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton5"));
+    searchingHospital_HospitalButton6 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton6"));
+    searchingHospital_HospitalButton7 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton7"));
+    searchingHospital_HospitalButton8 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton8"));
+    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
+    // Connect signals
+    g_signal_connect(searchingHospitalHomeButton, "clicked", G_CALLBACK(on_searchingHospitalHomeButton_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton_clicked), NULL);
+    g_signal_connect(searchingHospitalProfileButton, "clicked", G_CALLBACK(on_searchingHospitalProfileButton_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton1, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton1_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton2, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton2_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton3, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton3_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton4, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton4_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton5, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton5_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton6, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton6_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton7, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton7_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton8, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton8_clicked), NULL);    
     // SHow the Hospital Page
-    openWindow = searchingPageResultsHOSPITALS;
+    openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
 }
 
+void on_searchingHospitalHomeButton_clicked(GtkWidget *widget, gpointer data){
+    gtk_widget_hide(searchingPageHospital);
+    // Show Dashboard Page
+}
+
+void on_searchingHospital_HospitalButton_clicked(GtkWidget *widget, gpointer data){
+    // gtk_widget_hide(openWindow);
+    // // Show Searching Page
+    // openWindow = searchingPage;
+    // gtk_widget_show(openWindow);
+}
+
+void on_searchingHospitalProfileButton_clicked(GtkWidget *widget, gpointer data){
+    // gtk_widget_hide(openWindow);
+    // // Show Searching Page
+    // openWindow = searchingPage;
+    // gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton1_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton2_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton3_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton4_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton5_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+void on_searchingHospital_HospitalButton6_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton7_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_searchingHospital_HospitalButton8_clicked(GtkWidget *widget, gpointer data){
+    // Show Searching Page
+    hospitalPage_builder = gtk_builder_new_from_file("hospital_page.glade");
+    doctorProfileWindow = GTK_WIDGET(gtk_builder_get_object(hospitalPage_builder, "doctorProfileWindow"));
+    openWindow = doctorProfileWindow;
+    gtk_widget_show(openWindow);
+}
 void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data){
     // Hide Active Page
     gtk_widget_hide(openWindow);
@@ -1113,10 +1329,10 @@ void on_hospitalsButtonMainPage_clicked(GtkWidget *widget, gpointer data){
     // Hide the Main Page
     gtk_widget_hide(openWindow);
     // Show the Searching Page
-    searchingPageResultsHOSPITALS_Builder = gtk_builder_new_from_file("searching_page.glade");
-    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS")); 
-    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS"));
-    openWindow = searchingPageResultsHOSPITALS;
+    searchingPageHospital_Builder = gtk_builder_new_from_file("searching_page.glade");
+    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital")); 
+    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
+    openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
 }
 
