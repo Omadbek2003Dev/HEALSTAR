@@ -199,7 +199,7 @@
                                     <property name="width-request">100</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Naseer</property>
+                                    <property name="label" translatable="yes">Dr. Gotham</property>
                                     <attributes>
                                       <attribute name="font-desc" value="Sans Bold 20"/>
                                     </attributes>
@@ -248,7 +248,7 @@
                                     <property name="width-request">100</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Kareen</property>
+                                    <property name="label" translatable="yes">Dr. House</property>
                                     <attributes>
                                       <attribute name="font-desc" value="Sans Bold 20"/>
                                     </attributes>
@@ -297,7 +297,7 @@
                                     <property name="width-request">100</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. House</property>
+                                    <property name="label" translatable="yes">Dr. Michaelson</property>
                                     <attributes>
                                       <attribute name="font-desc" value="Sans Bold 20"/>
                                     </attributes>
@@ -329,347 +329,25 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver4">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver4Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver4Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Strange</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat4">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat4_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">3</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver5">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver5Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver5Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Shou</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat5">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat5_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">4</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver6">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver6Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver6Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Monk</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat6">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat6_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">5</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver7">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver7Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver7Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Khan</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat7">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat7_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">6</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver8">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver8Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver8Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Shangchi</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat8">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat8" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">7</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver9">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver9Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver9Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Chopra</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat9">
-                                    <property name="label" translatable="yes">show chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat9_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">8</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                             <child>
-                              <object class="GtkFixed" id="searchReceiver10">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <child>
-                                  <object class="GtkImage" id="searchReceiver10Image">
-                                    <property name="width-request">100</property>
-                                    <property name="height-request">80</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="pixbuf">static/doctorPinkIcon.jpg</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="searchReceiver10Name">
-                                    <property name="width-request">100</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Dr. Kim</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="showChat10">
-                                    <property name="label" translatable="yes">chat chat</property>
-                                    <property name="width-request">150</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <signal name="clicked" handler="showChat10_clicked_cb" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="x">86</property>
-                                    <property name="y">40</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">9</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                           </object>
                         </child>
@@ -722,7 +400,7 @@
                             <property name="height-request">100</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Naseer Abdulraheem</property>
+                            <property name="label" translatable="yes">Dr. Gotham</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans Bold Italic 25"/>
                             </attributes>
@@ -1041,8 +719,7 @@
                             <property name="height-request">80</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">      Naseer 
-Abdulraheem</property>
+                            <property name="label" translatable="yes">Gotham Georges</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans Bold 20"/>
                             </attributes>
@@ -1076,7 +753,7 @@ Abdulraheem</property>
                             <property name="width-request">90</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes"> n.abdulrahim@inha.uz</property>
+                            <property name="label" translatable="yes">g.gotham@gmail.com</property>
                             <attributes>
                               <attribute name="font-desc" value="Sans 15"/>
                             </attributes>

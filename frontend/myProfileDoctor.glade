@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="myProfileDoctorWindow">
+    <property name="width-request">700</property>
+    <property name="height-request">600</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed" id="myProfileDoctorFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkImage" id="myProfileDoctorWindowImage">
+            <property name="width-request">300</property>
+            <property name="height-request">250</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">static/DoctorProfile.png</property>
+          </object>
+          <packing>
+            <property name="x">205</property>
+            <property name="y">30</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="nameLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Name</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">380</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="surnameLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Surname</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">170</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="idLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">User ID</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">170</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="passwordLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">User Password</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">380</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="workingPositionLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Working Position</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">110</property>
+            <property name="y">400</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="phoneNumberLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Phone Number</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">385</property>
+            <property name="y">400</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="addressLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Address</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">170</property>
+            <property name="y">450</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="emailLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Email</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">400</property>
+            <property name="y">450</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="specializationLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Specialization</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">100</property>
+            <property name="y">500</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="qualificationLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Qualification</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">380</property>
+            <property name="y">500</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="hospitalLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Hospital</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">110</property>
+            <property name="y">550</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="experienceLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Experience</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">380</property>
+            <property name="y">550</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="workingHoursLabelMyProfileDoctor">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Working Hours</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold Italic 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">195</property>
+            <property name="y">590</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -103,6 +103,19 @@
                     <property name="y">5</property>
                   </packing>
                 </child>
+                <child>
+                  <object class="GtkButton" id="hospitalsButtonDoctorsPageClient">
+                    <property name="label" translatable="yes">Hospitals</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_hospitalsButtonDoctorsPageClient_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">245</property>
+                    <property name="y">5</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>

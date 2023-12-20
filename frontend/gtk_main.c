@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
-#include <gtk/gtkx.h>
+// #include <gtk/gtkx.h>
 #include <math.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -181,15 +181,9 @@ GtkWidget *doctorsPageClientWindow;
 GtkWidget *logoutButtonDoctorsPageClient;
 GtkWidget *homeButtonDoctorsPageClient;
 GtkWidget *messagesButtonDoctorPageClient;
-GtkWidget *hospitalsButtonDoctorsPageClient;
 GtkWidget *doctor1ButtonDoctorsPageClient;
 GtkWidget *doctor2ButtonDoctorsPageClient;
 GtkWidget *doctor3ButtonDoctorsPageClient;
-GtkWidget *doctor4ButtonDoctorsPageClient;
-GtkWidget *doctor5ButtonDoctorsPageClient;
-GtkWidget *doctor6ButtonDoctorsPageClient;
-GtkWidget *doctor7ButtonDoctorsPageClient;
-GtkWidget *doctor8ButtonDoctorsPageClient;
 GtkBuilder *doctorsPage_builder;
 
 //Search Page
@@ -215,6 +209,14 @@ GtkWidget *searchingHospital_HospitalButton6;
 GtkWidget *searchingHospital_HospitalButton7;
 GtkWidget *searchingHospital_HospitalButton8;
 GtkBuilder *searchingPageHospital_Builder;
+
+// My Profile Page for Doctor
+GtkWidget *myProfileDoctorWindow;
+GtkBuilder *myProfileDoctor_builder;
+
+// My Profile Page for Patient
+GtkWidget *myProfilePatientWindow;
+GtkBuilder *myProfilePatient_builder;
 
 
 // Function prototypes till Login Page
@@ -253,7 +255,6 @@ gboolean validationLogin();
 void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 // Categories functions
 void on_logoutButtonMainPage_clicked(GtkWidget *widget, gpointer data);
 void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data);
@@ -282,11 +283,6 @@ void on_searchingHospital_HospitalButton8_clicked(GtkWidget *widget, gpointer da
 void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_doctor4ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_doctor5ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_doctor6ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_doctor7ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
-void on_doctor8ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 
 
 // Function to generate unique IDs
@@ -951,7 +947,7 @@ gboolean validationLogin() {
 
 void on_backButtonLoginPage_clicked(GtkWidget *widget, gpointer data){
     // Hide the Log In Page 
-    gtk_widget_hide(openWindow);
+    gtk_widget_hide(loginPageWindow);
     // Show the Welcome Page
     openWindow = signInPageWindow;
     gtk_widget_show(signInPageWindow);
@@ -1006,6 +1002,16 @@ void show_Dashboard(char *role){
     gtk_widget_show(openWindow);
 } 
 
+void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
+    // Hide Dashboard Page
+    gtk_widget_hide(messagePageWindow);
+    // Show Welcome Page
+    welcome_builder = gtk_builder_new_from_file("welcome_page.glade");
+    // Get all widgets
+    welcomePageWindow = GTK_WIDGET(gtk_builder_get_object(welcome_builder, "welcomePageWindow"));
+    openWindow = welcomePageWindow;
+    gtk_widget_show(openWindow);
+}
 
 void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     // Show UI from Glade
@@ -1014,36 +1020,48 @@ void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
     homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
     messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
-    hospitalsButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "hospitalsButtonDoctorsPageClient"));
     doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
     doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
     doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
-    doctor4ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor4ButtonDoctorsPageClient"));
-    doctor5ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor5ButtonDoctorsPageClient"));
-    doctor6ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor6ButtonDoctorsPageClient"));
-    doctor7ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor7ButtonDoctorsPageClient"));
-    doctor8ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor8ButtonDoctorsPageClient"));
     // Connect signals 
     g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
-    g_signal_connect(hospitalsButtonDoctorsPageClient, "clicked", G_CALLBACK(on_hospitalsButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
     g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(doctor4ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor4ButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(doctor5ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor5ButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(doctor6ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor6ButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(doctor7ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor7ButtonDoctorsPageClient_clicked), NULL);
-    g_signal_connect(doctor8ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor8ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
+}
+
+void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Doctors Page
+    gtk_widget_hide(doctorsPageClientWindow);
 }
 
 void on_doctor1ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
     // Show UI from Glade
     gtk_widget_hide(openWindow);
     // Show Dashboard Page
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    // Show the Dashboard page
     openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
 }
@@ -1052,6 +1070,25 @@ void on_doctor2ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     // Show UI from Glade
     gtk_widget_hide(openWindow);
     // Show Dashboard Page
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    // Show the Dashboard page
     openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
 }
@@ -1060,75 +1097,57 @@ void on_doctor3ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data)
     // Show UI from Glade
     gtk_widget_hide(openWindow);
     // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_doctor4ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_doctor5ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_doctor6ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_doctor7ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_doctor8ButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Show UI from Glade
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Doctors Page
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    // Show the Dashboard page
     openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
+    // HIde the Doctors Page
     gtk_widget_hide(doctorsPageClientWindow);
 }
 
 void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data){
     gtk_widget_hide(openWindow);
     // Show Dashboard Page
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
+    // Show the Dashboard page
     openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
-
-void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(openWindow);
-    searchingPageHospital_Builder = gtk_builder_new_from_file("searching_page.glade");
-    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
-    // Show the Searching Page
-    openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
 }
 
@@ -1141,11 +1160,6 @@ void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     searchingHospital_HospitalButton1 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton1"));
     searchingHospital_HospitalButton2 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton2"));
     searchingHospital_HospitalButton3 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton3"));
-    searchingHospital_HospitalButton4 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton4"));
-    searchingHospital_HospitalButton5 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton5"));
-    searchingHospital_HospitalButton6 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton6"));
-    searchingHospital_HospitalButton7 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton7"));
-    searchingHospital_HospitalButton8 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton8"));
     searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
     // Connect signals
     g_signal_connect(searchingHospitalHomeButton, "clicked", G_CALLBACK(on_searchingHospitalHomeButton_clicked), NULL);
@@ -1154,11 +1168,6 @@ void on_hospitalsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     g_signal_connect(searchingHospital_HospitalButton1, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton1_clicked), NULL);
     g_signal_connect(searchingHospital_HospitalButton2, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton2_clicked), NULL);
     g_signal_connect(searchingHospital_HospitalButton3, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton3_clicked), NULL);
-    g_signal_connect(searchingHospital_HospitalButton4, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton4_clicked), NULL);
-    g_signal_connect(searchingHospital_HospitalButton5, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton5_clicked), NULL);
-    g_signal_connect(searchingHospital_HospitalButton6, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton6_clicked), NULL);
-    g_signal_connect(searchingHospital_HospitalButton7, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton7_clicked), NULL);
-    g_signal_connect(searchingHospital_HospitalButton8, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton8_clicked), NULL);    
     // SHow the Hospital Page
     openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
@@ -1177,10 +1186,28 @@ void on_searchingHospital_HospitalButton_clicked(GtkWidget *widget, gpointer dat
 }
 
 void on_searchingHospitalProfileButton_clicked(GtkWidget *widget, gpointer data){
-    // gtk_widget_hide(openWindow);
-    // // Show Searching Page
-    // openWindow = searchingPage;
-    // gtk_widget_show(openWindow);
+    if(strcmp(role, "doctor") == 0){
+        // Show My Profile Page for Doctor
+        myProfileDoctor_builder = gtk_builder_new_from_file("myProfileDoctor.glade");
+        myProfileDoctorWindow = GTK_WIDGET(gtk_builder_get_object(myProfileDoctor_builder, "myProfileDoctorWindow"));
+        openWindow = myProfileDoctorWindow;
+        gtk_widget_show(openWindow);
+    } else if(strcmp(role, "patient") == 0){
+        // Show My Profile Page for Patient
+        myProfilePatient_builder = gtk_builder_new_from_file("myProfilePatient.glade");
+        myProfilePatientWindow = GTK_WIDGET(gtk_builder_get_object(myProfilePatient_builder, "myProfilePatientWindow"));
+        openWindow = myProfilePatientWindow;
+        gtk_widget_show(openWindow);
+    } else {
+        // Validation for incorrect role
+        GtkWidget *dialog = gtk_message_dialog_new(NULL,
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_OK,
+                                                   "Incorrect role.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    }
 }
 
 void on_searchingHospital_HospitalButton1_clicked(GtkWidget *widget, gpointer data){
@@ -1245,27 +1272,9 @@ void on_searchingHospital_HospitalButton8_clicked(GtkWidget *widget, gpointer da
     openWindow = doctorProfileWindow;
     gtk_widget_show(openWindow);
 }
-void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data){
-    // Hide Active Page
-    gtk_widget_hide(openWindow);
-    // Show Dashboard Page
-    openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
-}
 
 void on_menuButtonMenuBarMessage_clicked(GtkWidget *widget, gpointer data){
 
-}
-
-void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
-    // Hide Dashboard Page
-    gtk_widget_hide(messagePageWindow);
-    // Show Welcome Page
-    welcome_builder = gtk_builder_new_from_file("welcome_page.glade");
-    // Get all widgets
-    welcomePageWindow = GTK_WIDGET(gtk_builder_get_object(welcome_builder, "welcomePageWindow"));
-    openWindow = welcomePageWindow;
-    gtk_widget_show(openWindow);
 }
 
 void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data){
@@ -1308,110 +1317,239 @@ void show_Categories(char *role){
 
 void on_logoutButtonMainPage_clicked(GtkWidget *widget, gpointer data){
     // Hide the Main Page
-    gtk_widget_hide(openWindow);
+    gtk_widget_hide(mainPage);
     // Show the Welcome Page
     openWindow = welcomePageWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Main Page
-    gtk_widget_hide(openWindow);
     // Show the Dashboard Page
     dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
     // Get all widgets
     messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    doctorsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "doctorsButtonMessage"));
+    hospitalsButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "hospitalsButtonMessage"));
+    homeButtonMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "homeButtonMessage"));
+    menuButtonMenuBarMessage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "menuButtonMenuBarMessage"));
+    logoutButtonMessagePage = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "logoutButtonMesaagePane"));
+    sendMessageButton = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "sendMessageButton"));
+    // Connect the destroy signal of the window
+    g_signal_connect(messagePageWindow, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    // Connect all signals
+    g_signal_connect(doctorsButtonMessage, "clicked", G_CALLBACK(on_doctorsButtonMessage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMessage, "clicked", G_CALLBACK(on_hospitalsButtonMessage_clicked), NULL);
+    g_signal_connect(homeButtonMessage, "clicked", G_CALLBACK(on_homeButtonMessage_clicked), NULL);
+    g_signal_connect(menuButtonMenuBarMessage, "clicked", G_CALLBACK(on_menuButtonMenuBarMessage_clicked), NULL);
+    g_signal_connect(logoutButtonMessagePage, "clicked", G_CALLBACK(on_logoutButtonMessagePage_clicked), NULL);
+    g_signal_connect(sendMessageButton, "clicked", G_CALLBACK(on_sendMessageButton_clicked), NULL);
     openWindow = messagePageWindow;
-    gtk_widget_show(openWindow);
+    gtk_widget_show(messagePageWindow);
+}
+
+void on_homeButtonMessage_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Main Page
+    if(strcmp(role, "patient") == 0){
+        gtk_widget_hide(openWindow);
+    }
+    
 }
 
 void on_hospitalsButtonMainPage_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Main Page
-    gtk_widget_hide(openWindow);
     // Show the Searching Page
     searchingPageHospital_Builder = gtk_builder_new_from_file("searching_page.glade");
-    searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital")); 
+    searchingHospitalHomeButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospitalHomeButton"));
+    searchingHospital_HospitalButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton"));
+    searchingHospitalProfileButton = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospitalProfileButton"));
+    searchingHospital_HospitalButton1 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton1"));
+    searchingHospital_HospitalButton2 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton2"));
+    searchingHospital_HospitalButton3 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton3"));
+    searchingHospital_HospitalButton4 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton4"));
+    searchingHospital_HospitalButton5 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton5"));
+    searchingHospital_HospitalButton6 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton6"));
+    searchingHospital_HospitalButton7 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton7"));
+    searchingHospital_HospitalButton8 = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingHospital_HospitalButton8"));
     searchingPageHospital = GTK_WIDGET(gtk_builder_get_object(searchingPageHospital_Builder, "searchingPageHospital"));
+    // Connect signals
+    g_signal_connect(searchingHospitalHomeButton, "clicked", G_CALLBACK(on_searchingHospitalHomeButton_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton_clicked), NULL);
+    g_signal_connect(searchingHospitalProfileButton, "clicked", G_CALLBACK(on_searchingHospitalProfileButton_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton1, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton1_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton2, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton2_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton3, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton3_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton4, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton4_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton5, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton5_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton6, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton6_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton7, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton7_clicked), NULL);
+    g_signal_connect(searchingHospital_HospitalButton8, "clicked", G_CALLBACK(on_searchingHospital_HospitalButton8_clicked), NULL);
     openWindow = searchingPageHospital;
     gtk_widget_show(openWindow);
 }
 
 void on_internalMedicineButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_cardiologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_orthopedicButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_neurologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_oncologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_pediatricsButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_obstetricsAndGynecologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }
 
 void on_psychiatryButtonCategories_clicked(GtkWidget *widget, gpointer data){
-    // Hide the Categories Page
-    gtk_widget_hide(openWindow);
     // Show the Doctors Page
     doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
     doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    logoutButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "logoutButtonDoctorsPageClient"));
+    homeButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientMenuBarFixed"));
+    messagesButtonDoctorPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "messagesButtonDoctorPageClient"));
+    doctor1ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor1ButtonDoctorsPageClient"));
+    doctor2ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor2ButtonDoctorsPageClient"));
+    doctor3ButtonDoctorsPageClient = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctor3ButtonDoctorsPageClient"));
+    // Connect signals 
+    g_signal_connect(logoutButtonDoctorsPageClient, "clicked", G_CALLBACK(on_logoutButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(homeButtonDoctorsPageClient, "clicked", G_CALLBACK(on_homeButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(messagesButtonDoctorPageClient, "clicked", G_CALLBACK(on_messagesButtonDoctorPageClient_clicked), NULL);
+    g_signal_connect(doctor1ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor1ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor2ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor2ButtonDoctorsPageClient_clicked), NULL);
+    g_signal_connect(doctor3ButtonDoctorsPageClient, "clicked", G_CALLBACK(on_doctor3ButtonDoctorsPageClient_clicked), NULL);
     openWindow = doctorsPageClientWindow;
     gtk_widget_show(openWindow);
 }

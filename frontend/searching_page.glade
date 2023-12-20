@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 -->
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkListStore" id="ListOfRegions">
@@ -205,25 +205,14 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkComboBox" id="typeOfSearch1">
-                        <property name="width-request">200</property>
-                        <property name="height-request">50</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="model">searchType</property>
-                      </object>
-                      <packing>
-                        <property name="x">550</property>
-                        <property name="y">75</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkComboBox">
+                      <object class="GtkComboBox" id="localityDoctor">
                         <property name="width-request">200</property>
                         <property name="height-request">50</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="model">listStoreGlobalLocal</property>
+                        <property name="active">2</property>
+                        <property name="button-sensitivity">on</property>
                         <property name="has-entry">True</property>
                         <property name="entry-text-column">0</property>
                         <child internal-child="entry">
@@ -259,6 +248,28 @@
                         <property name="y">75</property>
                       </packing>
                     </child>
+                    <child>
+                      <object class="GtkComboBox" id="typeOfSearch1">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">searchType</property>
+                        <property name="active">2</property>
+                        <property name="button-sensitivity">on</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">False</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">550</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -274,8 +285,8 @@
                 <property name="can-focus">False</property>
                 <child>
                   <object class="GtkFixed">
-                    <property name="width-request">100</property>
-                    <property name="height-request">80</property>
+                    <property name="width-request">300</property>
+                    <property name="height-request">550</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
@@ -359,141 +370,6 @@
                         <property name="y">218</property>
                       </packing>
                     </child>
-                    <child>
-                      <object class="GtkImage" id="DoctorButton3">
-                        <property name="width-request">100</property>
-                        <property name="height-request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pixbuf">static/BigDoctor.jpg</property>
-                      </object>
-                      <packing>
-                        <property name="x">700</property>
-                        <property name="y">18</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="searchingDoctorProfessionalButton3">
-                        <property name="label" translatable="yes">DoctorName</property>
-                        <property name="width-request">200</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <signal name="clicked" handler="on_searchingDoctorProfessionalButton3_clicked" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="x">700</property>
-                        <property name="y">218</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="internalMedecinePhoto2">
-                        <property name="width-request">100</property>
-                        <property name="height-request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pixbuf">static/BigDoctor.jpg</property>
-                      </object>
-                      <packing>
-                        <property name="x">260</property>
-                        <property name="y">278</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="internalMedecinePhoto3">
-                        <property name="width-request">100</property>
-                        <property name="height-request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pixbuf">static/BigDoctor.jpg</property>
-                      </object>
-                      <packing>
-                        <property name="x">480</property>
-                        <property name="y">278</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="internalMedecinePhoto4">
-                        <property name="width-request">100</property>
-                        <property name="height-request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pixbuf">static/BigDoctor.jpg</property>
-                      </object>
-                      <packing>
-                        <property name="x">700</property>
-                        <property name="y">278</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="searchingDoctorProfessionalButton4">
-                        <property name="label" translatable="yes">DoctorName</property>
-                        <property name="width-request">200</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <signal name="clicked" handler="on_searchingDoctorProfessionalButton4_clicked" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="x">40</property>
-                        <property name="y">478</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="searchingDoctorProfessionalButton5">
-                        <property name="label" translatable="yes">DoctorName</property>
-                        <property name="width-request">200</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <signal name="clicked" handler="on_searchingDoctorProfessionalButton5_clicked" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="x">260</property>
-                        <property name="y">478</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="searchingDoctorProfessionalButton6">
-                        <property name="label" translatable="yes">DoctorName</property>
-                        <property name="width-request">200</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <signal name="clicked" handler="on_searchingDoctorProfessionalButton6_clicked" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="x">480</property>
-                        <property name="y">478</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="searchingDoctorProfessionalButton7">
-                        <property name="label" translatable="yes">DoctorName</property>
-                        <property name="width-request">200</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <signal name="clicked" handler="on_searchingDoctorProfessionalButton7_clicked" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="x">700</property>
-                        <property name="y">478</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="internalMedecinePhoto1">
-                        <property name="width-request">100</property>
-                        <property name="height-request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pixbuf">static/BigDoctor.jpg</property>
-                      </object>
-                      <packing>
-                        <property name="x">40</property>
-                        <property name="y">278</property>
-                      </packing>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -546,6 +422,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <property name="always-show-image">True</property>
                     <signal name="clicked" handler="on_searchingHospitalHomeButton_clicked" swapped="no"/>
                   </object>
                   <packing>
@@ -636,25 +513,14 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkComboBox" id="typeOfSearch3">
-                        <property name="width-request">200</property>
-                        <property name="height-request">50</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="model">searchType</property>
-                      </object>
-                      <packing>
-                        <property name="x">550</property>
-                        <property name="y">75</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkComboBox">
+                      <object class="GtkComboBox" id="localityHospital">
                         <property name="width-request">200</property>
                         <property name="height-request">50</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="model">listStoreGlobalLocal</property>
+                        <property name="active">2</property>
+                        <property name="button-sensitivity">on</property>
                         <property name="has-entry">True</property>
                         <property name="entry-text-column">0</property>
                         <child internal-child="entry">
@@ -687,6 +553,28 @@
                       </object>
                       <packing>
                         <property name="x">800</property>
+                        <property name="y">75</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="typeOfSearch3">
+                        <property name="width-request">200</property>
+                        <property name="height-request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="model">searchType</property>
+                        <property name="active">2</property>
+                        <property name="button-sensitivity">on</property>
+                        <property name="has-entry">True</property>
+                        <property name="entry-text-column">0</property>
+                        <child internal-child="entry">
+                          <object class="GtkEntry">
+                            <property name="can-focus">False</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">550</property>
                         <property name="y">75</property>
                       </packing>
                     </child>
