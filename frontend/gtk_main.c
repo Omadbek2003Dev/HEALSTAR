@@ -72,6 +72,7 @@ char patient_phone[255];
 char patient_email[255];
 char patient_password[255];
 char patient_confirm_password[255];
+#define MAX_STRING_LENGTH 255
 
 // Make all Widgets global
 //Welcome Page
@@ -173,7 +174,6 @@ GtkWidget *oncologyButtonCategories;
 GtkWidget *pediatricsButtonCategories;
 GtkWidget *obstetricsAndGynecologyButtonCategories;
 GtkWidget *psychiatryButtonCategories;
-GtkWidget *logoutButtonMainPage;
 GtkBuilder *categoriesPage_builder;
 
 //Doctors Page
@@ -213,7 +213,6 @@ void on_backButtonCreateAccountPagePatient_clicked(GtkWidget *widget, gpointer d
 void on_submitButtonRegistration_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonRegistration_clicked(GtkWidget *widget, gpointer data);
 void on_submitButton_clicked(GtkWidget *widget, gpointer data);
-void on_submitButtonRegistration_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonRejectionPage_clicked(GtkWidget *widget, gpointer data);
 void on_logInButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data);
 void on_backButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data);
@@ -236,6 +235,18 @@ void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_messagesButtonDoctorPageClient_clicked(GtkWidget *widget, gpointer data);
 void on_hospitalsButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data);
+// Categories functions
+void on_logoutButtonMainPage_clicked(GtkWidget *widget, gpointer data);
+void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data);
+void on_hospitalsButtonMainPage_clicked(GtkWidget *widget, gpointer data);
+void on_internalMedicineButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_cardiologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_orthopedicButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_neurologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_oncologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_pediatricsButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_obstetricsAndGynecologyButtonCategories_clicked(GtkWidget *widget, gpointer data);
+void on_psychiatryButtonCategories_clicked(GtkWidget *widget, gpointer data);
 
 // Function to generate unique IDs
 char* generateID(char role) {
@@ -278,7 +289,6 @@ int main(int argc, char *argv[]) {
 
     // Import the UI from Glade
     welcome_builder = gtk_builder_new_from_file("welcome_page.glade");
-
     // Get all widgets
     welcomePageWindow = GTK_WIDGET(gtk_builder_get_object(welcome_builder, "welcomePageWindow"));
     doctorButton = GTK_WIDGET(gtk_builder_get_object(welcome_builder, "doctorButton"));
@@ -549,33 +559,43 @@ void on_submitButtonCreateAccountPagePatient_clicked(GtkWidget *widget, gpointer
     if (!validationPatientRegistration()) {
         return;
     }
+
     role = "patient";
+
     // Get the patient ID
     char *patientID = generateID(role);
+
+    // Ensure proper memory allocation for strings
+    char patient_surname[MAX_STRING_LENGTH];
+    char patient_name[MAX_STRING_LENGTH];
+    char patient_id[MAX_STRING_LENGTH];
+    char patient_working_position[MAX_STRING_LENGTH];
+    char patient_address[MAX_STRING_LENGTH];
+    char patient_phone[MAX_STRING_LENGTH];
+
+    // Ensure proper initialization and null-termination
     strcpy(patient_surname, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientSurnameEntry"))));
     strcpy(patient_name, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientNameEntry"))));
     strcpy(patient_id, patientID);
     strcpy(patient_working_position, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientWorkingPositionEntry"))));
     strcpy(patient_address, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientAddressEntry"))));
     strcpy(patient_phone, gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(createAccountPagePatient_builder, "createAccountPagePatientPhoneNumberEntry"))));
-    char *body_prepare = "\
-    { \
-        \"patient_surname\": \"%s\", \
-        \"patient_name\": \"%s\", \
-        \"patient_id\": \"%s\", \
-        \"patient_working_position\": \"%s\", \
-        \"patient_address\": \"%s\", \
-        \"patient_phone\": \"%s\",  \
-    }";
-    char post_body[1024];
+
+    char body_prepare[] = "{ \"patient_surname\": \"%s\", \"patient_name\": \"%s\", \"patient_id\": \"%s\", \"patient_working_position\": \"%s\", \"patient_address\": \"%s\", \"patient_phone\": \"%s\" }";
+
+    // Ensure proper memory allocation for post_body
+    char post_body[MAX_STRING_LENGTH + sizeof(body_prepare)];
     sprintf(post_body, body_prepare, patient_surname, patient_name, patient_id, patient_working_position, patient_address, patient_phone);
+
     char *response_body = NULL;
     int response_body_size = 0;
 
-    //int ret_code = http_post(&serv, "/api/patient/add", post_body, sizeof(post_body), &response_body, &response_body_size);
-    int ret_code = 200;
-    if(ret_code == 200)
-    {	
+    // Uncomment and implement the http_post function correctly
+    // int ret_code = http_post(&serv, "/api/patient/add", post_body, strlen(post_body), &response_body, &response_body_size);
+
+    int ret_code = 200;  // Temporary value, replace with actual HTTP status code
+
+    if (ret_code == 200) {
         // Hide the sign-up page
         gtk_widget_hide(openWindow);
         // Import the Registration UI from Glade
@@ -590,7 +610,12 @@ void on_submitButtonCreateAccountPagePatient_clicked(GtkWidget *widget, gpointer
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
     }
+
+    // Free dynamically allocated memory (if any)
+    // No dynamic memory is allocated in this snippet, so no explicit freeing is needed.
 }
+
+
 // Validation for Patient Page
 gboolean validationPatientRegistration() {
     gboolean isSurnameValid = validate_non_empty(createAccountPagePatientSurnameEntry, "Surname");
@@ -866,7 +891,7 @@ void on_backButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data) {
 
 void on_logInButtonConfirmationPage_clicked(GtkWidget *widget, gpointer data) {
     // Hide the confirmation page
-    gtk_widget_hide(openWindow);
+    gtk_widget_hide(confirmationPageWindow);
     // Show the sign-in page
     openWindow = signInPageWindow;
     gtk_widget_show(openWindow);
@@ -940,14 +965,6 @@ void show_Dashboard(char *role){
     gtk_widget_show(openWindow);
 } 
 
-void show_Categories(char *role){
-    // Get ui from Glade
-    categoriesPage_builder = gtk_builder_new_from_file("mainCategories_page.glade");
-    mainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "mainPage"));
-    openWindow = mainPage;
-    gtk_widget_show(openWindow);
-}
-
 
 void on_doctorsButtonMessage_clicked(GtkWidget *widget, gpointer data){
     // Show UI from Glade
@@ -975,7 +992,7 @@ void on_logoutButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
 }
 
 void on_homeButtonDoctorsPageClient_clicked(GtkWidget *widget, gpointer data){
-    gtk_widget_hide(doctorsPageClientWindow);
+    gtk_widget_hide(openWindow);
     // Show Dashboard Page
     openWindow = messagePageWindow;
     gtk_widget_show(openWindow);
@@ -1026,12 +1043,159 @@ void on_menuButtonMenuBarMessage_clicked(GtkWidget *widget, gpointer data){
 
 void on_logoutButtonMessagePage_clicked(GtkWidget *widget, gpointer data){
     // Hide Dashboard Page
-    gtk_widget_hide(openWindow);
+    gtk_widget_hide(messagePageWindow);
     // Show Welcome Page
+    welcome_builder = gtk_builder_new_from_file("welcome_page.glade");
+    // Get all widgets
+    welcomePageWindow = GTK_WIDGET(gtk_builder_get_object(welcome_builder, "welcomePageWindow"));
     openWindow = welcomePageWindow;
-    gtk_widget_show_all(openWindow);
+    gtk_widget_show(openWindow);
 }
 
 void on_sendMessageButton_clicked(GtkWidget *widget, gpointer data){
 
+}
+
+void show_Categories(char *role){
+    // Close Active Window
+    gtk_widget_hide(openWindow);
+    // Get ui from Glade
+    categoriesPage_builder = gtk_builder_new_from_file("mainCategories_page.glade");
+    mainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "mainPage"));
+    logoutButtonMainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "logoutButtonMainPage"));
+    messagesButtonMainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "messagesButtonMainPage"));
+    hospitalsButtonMainPage = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "hospitalsButtonMainPage"));
+    internalMedicineButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "internalMedicineButtonCategories"));
+    cardiologyButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "cardiologyButtonCategories"));
+    orthopedicButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "orthopedicButtonCategories"));
+    neurologyButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "neurologyButtonCategories"));
+    oncologyButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "oncologyButtonCategories"));
+    pediatricsButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "pediatricsButtonCategories"));
+    obstetricsAndGynecologyButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "obstetricsAndGynecologyButtonCategories"));
+    psychiatryButtonCategories = GTK_WIDGET(gtk_builder_get_object(categoriesPage_builder, "psychiatryButtonCategories"));
+    // Connect all the  signals
+    g_signal_connect(logoutButtonMainPage, "clicked", G_CALLBACK(on_logoutButtonMainPage_clicked), NULL);
+    g_signal_connect(messagesButtonMainPage, "clicked", G_CALLBACK(on_messagesButtonMainPage_clicked), NULL);
+    g_signal_connect(hospitalsButtonMainPage, "clicked", G_CALLBACK(on_hospitalsButtonMainPage_clicked), NULL);
+    g_signal_connect(internalMedicineButtonCategories, "clicked", G_CALLBACK(on_internalMedicineButtonCategories_clicked), NULL);
+    g_signal_connect(cardiologyButtonCategories, "clicked", G_CALLBACK(on_cardiologyButtonCategories_clicked), NULL);
+    g_signal_connect(orthopedicButtonCategories, "clicked", G_CALLBACK(on_orthopedicButtonCategories_clicked), NULL);
+    g_signal_connect(neurologyButtonCategories, "clicked", G_CALLBACK(on_neurologyButtonCategories_clicked), NULL);
+    g_signal_connect(oncologyButtonCategories, "clicked", G_CALLBACK(on_oncologyButtonCategories_clicked), NULL);
+    g_signal_connect(pediatricsButtonCategories, "clicked", G_CALLBACK(on_pediatricsButtonCategories_clicked), NULL);
+    g_signal_connect(obstetricsAndGynecologyButtonCategories, "clicked", G_CALLBACK(on_obstetricsAndGynecologyButtonCategories_clicked), NULL);
+    g_signal_connect(psychiatryButtonCategories, "clicked", G_CALLBACK(on_psychiatryButtonCategories_clicked), NULL);
+    // Open the window
+    openWindow = mainPage;
+    gtk_widget_show(openWindow);
+}
+
+void on_logoutButtonMainPage_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Main Page
+    gtk_widget_hide(openWindow);
+    // Show the Welcome Page
+    openWindow = welcomePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_messagesButtonMainPage_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Main Page
+    gtk_widget_hide(openWindow);
+    // Show the Dashboard Page
+    dashboardPage_builder = gtk_builder_new_from_file("chatClientWithDoctor_page.glade");
+    // Get all widgets
+    messagePageWindow = GTK_WIDGET(gtk_builder_get_object(dashboardPage_builder, "messagePageWindow"));
+    openWindow = messagePageWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_hospitalsButtonMainPage_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Main Page
+    gtk_widget_hide(openWindow);
+    // Show the Searching Page
+    searchingPageResultsHOSPITALS_Builder = gtk_builder_new_from_file("searching_page.glade");
+    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS")); 
+    searchingPageResultsHOSPITALS = GTK_WIDGET(gtk_builder_get_object(searchingPageResultsHOSPITALS_Builder, "searchingPageResultsHOSPITALS"));
+    openWindow = searchingPageResultsHOSPITALS;
+    gtk_widget_show(openWindow);
+}
+
+void on_internalMedicineButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_cardiologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_orthopedicButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_neurologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_oncologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_pediatricsButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_obstetricsAndGynecologyButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
+}
+
+void on_psychiatryButtonCategories_clicked(GtkWidget *widget, gpointer data){
+    // Hide the Categories Page
+    gtk_widget_hide(openWindow);
+    // Show the Doctors Page
+    doctorsPage_builder = gtk_builder_new_from_file("doctorsForClient_page.glade");
+    doctorsPageClientWindow = GTK_WIDGET(gtk_builder_get_object(doctorsPage_builder, "doctorsPageClientWindow"));
+    openWindow = doctorsPageClientWindow;
+    gtk_widget_show(openWindow);
 }
